@@ -1,0 +1,82 @@
+CRITICAL - 2022-11-26 00:14:10 --> Class "App\Models\manage\Option_model" not found
+in APPPATH\Controllers\auth\Forgot.php on line 30.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\auth\Forgot->sendresetlink()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\auth\Forgot))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-11-26 13:15:26 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2022-11-26 13:15:26 --> 220 host07.emailserver.vn ESMTP Exim 4.92.1 Sat, 26 Nov 2022 13:18:05 +0700
+
+hello: 250-host07.emailserver.vn Hello localhost [1.55.239.120]
+250-SIZE 12582912
+250-8BITMIME
+250-PIPELINING
+250-AUTH PLAIN LOGIN
+250 HELP
+
+from: 250 OK
+
+to: 250 Accepted
+
+data: 354 Enter message, ending with "." on a line by itself
+
+550 Invalid authentication (you can only send From:sale@macstorehaiphong.com)
+
+quit: 221 host07.emailserver.vn closing connection
+
+The following SMTP error was encountered: 550 Invalid authentication (you can only send From:sale@macstorehaiphong.com)
+
+ERROR - 2022-11-26 17:15:30 --> Email: sendWithSmtp throwed ErrorException: fsockopen(): SSL: Handshake timed out in C:\xampp\htdocs\ci4cty\system\Email\Email.php:1863
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fsockopen(): SS...', 'C:\\xampp\\htdocs...', 1863)
+#1 C:\xampp\htdocs\ci4cty\system\Email\Email.php(1863): fsockopen('ssl://host07.em...', '465', NULL, NULL, 5)
+#2 C:\xampp\htdocs\ci4cty\system\Email\Email.php(1777): CodeIgniter\Email\Email->SMTPConnect()
+#3 C:\xampp\htdocs\ci4cty\system\Email\Email.php(1662): CodeIgniter\Email\Email->sendWithSmtp()
+#4 C:\xampp\htdocs\ci4cty\system\Email\Email.php(1560): CodeIgniter\Email\Email->spoolEmail()
+#5 C:\xampp\htdocs\ci4cty\app\Controllers\auth\Forgot.php(63): CodeIgniter\Email\Email->send()
+#6 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(927): App\Controllers\auth\Forgot->sendresetlink()
+#7 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\auth\Forgot))
+#8 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ci4cty\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-11-26 17:15:30 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2022-11-26 17:15:30 --> 
+CRITICAL - 2022-11-26 17:16:01 --> Invalid file: auth/resetpassword.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/resetpassword.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('auth/resetpassword', [], true)
+ 3 APPPATH\Controllers\auth\Forgot.php(99): view('auth/resetpassword', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\auth\Forgot->loadresetpage('1', '3RutMXyYK9S5qIZhLrBEedoz8')
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\auth\Forgot))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-11-26 17:16:41 --> Email: sendWithSmtp throwed ErrorException: fsockopen(): SSL: Handshake timed out in C:\xampp\htdocs\ci4cty\system\Email\Email.php:1863
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fsockopen(): SS...', 'C:\\xampp\\htdocs...', 1863)
+#1 C:\xampp\htdocs\ci4cty\system\Email\Email.php(1863): fsockopen('ssl://host07.em...', '465', NULL, NULL, 5)
+#2 C:\xampp\htdocs\ci4cty\system\Email\Email.php(1777): CodeIgniter\Email\Email->SMTPConnect()
+#3 C:\xampp\htdocs\ci4cty\system\Email\Email.php(1662): CodeIgniter\Email\Email->sendWithSmtp()
+#4 C:\xampp\htdocs\ci4cty\system\Email\Email.php(1560): CodeIgniter\Email\Email->spoolEmail()
+#5 C:\xampp\htdocs\ci4cty\app\Controllers\auth\Forgot.php(63): CodeIgniter\Email\Email->send()
+#6 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(927): App\Controllers\auth\Forgot->sendresetlink()
+#7 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\auth\Forgot))
+#8 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ci4cty\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-11-26 17:16:41 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2022-11-26 17:16:41 --> 
+ERROR - 2022-11-26 17:21:51 --> Email: sendWithSmtp throwed ErrorException: fsockopen(): SSL: Handshake timed out in C:\xampp\htdocs\ci4cty\system\Email\Email.php:1863
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fsockopen(): SS...', 'C:\\xampp\\htdocs...', 1863)
+#1 C:\xampp\htdocs\ci4cty\system\Email\Email.php(1863): fsockopen('ssl://host07.em...', '465', NULL, NULL, 5)
+#2 C:\xampp\htdocs\ci4cty\system\Email\Email.php(1777): CodeIgniter\Email\Email->SMTPConnect()
+#3 C:\xampp\htdocs\ci4cty\system\Email\Email.php(1662): CodeIgniter\Email\Email->sendWithSmtp()
+#4 C:\xampp\htdocs\ci4cty\system\Email\Email.php(1560): CodeIgniter\Email\Email->spoolEmail()
+#5 C:\xampp\htdocs\ci4cty\app\Controllers\auth\Forgot.php(63): CodeIgniter\Email\Email->send()
+#6 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(927): App\Controllers\auth\Forgot->sendresetlink()
+#7 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\auth\Forgot))
+#8 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ci4cty\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-11-26 17:21:51 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2022-11-26 17:21:51 --> 

@@ -33,6 +33,84 @@ $routes->set404Override();
  * --------------------------------------------------------------------
  */
 
+// auth
+$routes->group('auth', ['filter' => 'noauth'], function ($routes) {
+    $routes->get('login', 'auth\Login::index', ['as' => 'login']);
+    $routes->post('auth', 'auth\Login::auth');
+    $routes->get('register', 'auth\Register::index');
+    $routes->post('register/save', 'auth\Register::save');
+    $routes->get('forgot', 'auth\Forgot::index');
+    $routes->post('sendresetlink', 'auth\Forgot::sendresetlink');
+    $routes->get('redirect/(:num)/(:any)', 'auth\Forgot::loadresetpage/$1/$2'); // 1st param is id, 2nd is token
+    $routes->post('resetpassword', 'auth/Forgot::updatepassword');
+});
+$routes->group('manage', ['filter' => 'auth'], function ($routes) {
+    // dashboard
+    $routes->get('dashboard', 'manage\Dashboard::index');
+    $routes->get('category', 'manage\Category::index');
+    // page
+    $routes->get('page', 'manage\Page::index');
+    // shop-info
+    $routes->get('info', 'manage\Info::index');
+    // profile
+    $routes->get('profile', 'manage\Profile::index');
+    $routes->post('profile/update', 'manage\Profile::update');
+});
+
+$routes->group('manage', ['filter' => 'role'], function ($routes) {
+
+    // category
+    $routes->add('category/edit/(:num)', 'manage\Category::edit/$1');
+    $routes->get('category/add', 'manage\Category::add');
+    $routes->post('category/save', 'manage\Category::save');
+    $routes->post('category/update', 'manage\Category::update');
+    $routes->get('category/delete/(:num)', 'manage\Category::delete/$1');
+
+    // menu
+    $routes->get('menu', 'manage\Menu::index');
+    $routes->get('menu/add', 'manage\Menu::add');
+    $routes->get('menu/edit/(:num)', 'manage\Menu::edit/$1');
+    $routes->post('menu/save', 'manage\Menu::save');
+    $routes->post('menu/update', 'manage\Menu::update');
+    $routes->get('menu/delete/(:num)', 'manage\Menu::delete/$1');
+    
+    // page
+    $routes->get('page/add', 'manage\Page::add');
+    $routes->get('page/edit/(:num)', 'manage\Page::edit/$1');
+    $routes->post('page/save', 'manage\Page::save');
+    $routes->post('page/update', 'manage\Page::update');
+    $routes->get('page/delete/(:num)', 'manage\Page::delete/$1');
+
+    // post
+    $routes->get('post', 'manage\Post::index');
+    $routes->get('post/edit/(:num)', 'manage\Post::edit/$1');
+    $routes->get('post/add', 'manage\Post::add');
+    $routes->post('post/save', 'manage\Post::save');
+    $routes->post('post/update', 'manage\Post::update');
+    $routes->get('post/delete/(:num)', 'manage\Post::delete/$1');
+    $routes->get('post/restore/(:num)', 'manage\Post::restore/$1');
+    $routes->get('post/delete-from-trash/(:num)', 'manage\Post::delete_from_trash/$1');
+
+    // user
+    $routes->get('user', 'manage\User::index');
+    $routes->get('user/add', 'manage\User::add');
+    $routes->get('user/edit/(:num)', 'manage\User::edit/$1');
+    $routes->post('user/save', 'manage\User::save');
+    $routes->post('user/update', 'manage\User::update');
+    $routes->get('user/delete/(:num)', 'manage\User::delete/$1');
+
+    // option
+    $routes->get('options', 'manage\Site::index');
+    $routes->post('options/save', 'manage/Site::save');
+
+    // shop_info
+    $routes->add('info/edit/(:num)', 'manage\Info::edit/$1');
+    $routes->get('info/add', 'manage\Info::add');
+    $routes->post('info/save', 'manage\Info::save');
+    $routes->post('info/update', 'manage\Info::update');
+    $routes->get('info/delete/(:num)', 'manage\Info::delete/$1');
+});
+
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');

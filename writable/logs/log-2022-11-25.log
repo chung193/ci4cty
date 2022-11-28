@@ -1,0 +1,132 @@
+CRITICAL - 2022-11-25 09:37:02 --> The namespace delimiter is a backslash (\), not a slash (/). Route handler: \App\Controllers\auth/Login::index
+in SYSTEMPATH\Router\Router.php on line 466.
+ 1 SYSTEMPATH\Router\Router.php(466): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\auth/Login::index')
+ 2 SYSTEMPATH\Router\Router.php(181): CodeIgniter\Router\Router->checkRoutes('auth/login')
+ 3 SYSTEMPATH\CodeIgniter.php(802): CodeIgniter\Router\Router->handle('/auth/login')
+ 4 SYSTEMPATH\CodeIgniter.php(430): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-25 09:40:58 --> The namespace delimiter is a backslash (\), not a slash (/). Route handler: \App\Controllers\auth/Login::index
+in SYSTEMPATH\Router\Router.php on line 466.
+ 1 SYSTEMPATH\Router\Router.php(466): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\auth/Login::index')
+ 2 SYSTEMPATH\Router\Router.php(181): CodeIgniter\Router\Router->checkRoutes('auth/login')
+ 3 SYSTEMPATH\CodeIgniter.php(802): CodeIgniter\Router\Router->handle('/auth/login')
+ 4 SYSTEMPATH\CodeIgniter.php(430): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-25 09:41:16 --> noauth filter must have a matching alias defined.
+in SYSTEMPATH\Filters\Filters.php on line 340.
+ 1 SYSTEMPATH\Filters\Filters.php(340): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('noauth')
+ 2 SYSTEMPATH\CodeIgniter.php(446): CodeIgniter\Filters\Filters->enableFilter('noauth', 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-25 09:49:14 --> Invalid file: auth/contents/auth/contents/login.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/contents/auth/contents/login.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('auth/contents/auth/contents/login', [], true)
+ 3 APPPATH\Views\auth\layout.php(23): view('auth/contents/auth/contents/login')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\auth\\layout.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('auth/layout', [], true)
+ 7 APPPATH\Controllers\auth\Login.php(15): view('auth/layout', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\auth\Login->index()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\auth\Login))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-25 09:50:50 --> Invalid file: auth/contents/auth/contents/login.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/contents/auth/contents/login.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('auth/contents/auth/contents/login', [], true)
+ 3 APPPATH\Views\auth\layout.php(23): view('auth/contents/auth/contents/login')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\auth\\layout.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('auth/layout', [], true)
+ 7 APPPATH\Controllers\auth\Login.php(15): view('auth/layout', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\auth\Login->index()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\auth\Login))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-25 09:51:59 --> Invalid file: auth/contents/auth/contents/login.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/contents/auth/contents/login.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('auth/contents/auth/contents/login', [], true)
+ 3 APPPATH\Views\auth\layout.php(23): view('auth/contents/auth/contents/login')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\auth\\layout.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('auth/layout', [], true)
+ 7 APPPATH\Controllers\auth\Login.php(15): view('auth/layout', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\auth\Login->index()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\auth\Login))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-25 09:52:34 --> Invalid file: auth/contents//auth/contents/login.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/contents//auth/contents/login.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('auth/contents//auth/contents/login', [], true)
+ 3 APPPATH\Views\auth\layout.php(23): view('auth/contents//auth/contents/login')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\auth\\layout.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('/auth/layout', [], true)
+ 7 APPPATH\Controllers\auth\Login.php(15): view('/auth/layout', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\auth\Login->index()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\auth\Login))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-25 09:52:35 --> Invalid file: auth/contents//auth/contents/login.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/contents//auth/contents/login.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('auth/contents//auth/contents/login', [], true)
+ 3 APPPATH\Views\auth\layout.php(23): view('auth/contents//auth/contents/login')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\auth\\layout.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('/auth/layout', [], true)
+ 7 APPPATH\Controllers\auth\Login.php(15): view('/auth/layout', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\auth\Login->index()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\auth\Login))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-25 10:02:23 --> The namespace delimiter is a backslash (\), not a slash (/). Route handler: \App\Controllers\auth/Forgot::index
+in SYSTEMPATH\Router\Router.php on line 466.
+ 1 SYSTEMPATH\Router\Router.php(466): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\auth/Forgot::index')
+ 2 SYSTEMPATH\Router\Router.php(181): CodeIgniter\Router\Router->checkRoutes('auth/forgot')
+ 3 SYSTEMPATH\CodeIgniter.php(802): CodeIgniter\Router\Router->handle('/auth/forgot')
+ 4 SYSTEMPATH\CodeIgniter.php(430): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-25 10:03:55 --> The namespace delimiter is a backslash (\), not a slash (/). Route handler: \App\Controllers\auth/Forgot::index
+in SYSTEMPATH\Router\Router.php on line 466.
+ 1 SYSTEMPATH\Router\Router.php(466): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\auth/Forgot::index')
+ 2 SYSTEMPATH\Router\Router.php(181): CodeIgniter\Router\Router->checkRoutes('auth/forgot')
+ 3 SYSTEMPATH\CodeIgniter.php(802): CodeIgniter\Router\Router->handle('/auth/forgot')
+ 4 SYSTEMPATH\CodeIgniter.php(430): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-25 10:04:04 --> Invalid file: auth/forgot.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/forgot.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('auth/forgot', [], true)
+ 3 APPPATH\Controllers\auth\Forgot.php(12): view('auth/forgot')
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\auth\Forgot->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\auth\Forgot))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-25 10:05:10 --> Undefined variable $title
+in APPPATH\Views\auth\layout.php on line 6.
+ 1 APPPATH\Views\auth\layout.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', 'APPPATH\\Views\\auth\\layout.php', 6)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\auth\\layout.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('auth/layout', [], true)
+ 5 APPPATH\Controllers\auth\Forgot.php(16): view('auth/layout')
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\auth\Forgot->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\auth\Forgot))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-25 18:13:48 --> Invalid file: auth/register.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/register.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('auth/register', [], true)
+ 3 APPPATH\Controllers\auth\Register.php(23): view('auth/register', [])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\auth\Register->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\auth\Register))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

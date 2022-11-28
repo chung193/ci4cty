@@ -1,0 +1,1 @@
+<hr><p>Page rendered in {elapsed_time} seconds. <strong>Codeigniter 4.2</strong> - design by <strong>chung193</strong></p>
