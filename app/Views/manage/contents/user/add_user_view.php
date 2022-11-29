@@ -9,9 +9,9 @@
     );
     echo view('manage/components/breadcrumb', $data)
     ?>
-        <form action="<?php echo base_url() ?>/manage/user/save" method="post" enctype='multipart/form-data'>
+        <form action="<?php echo base_url() ?>/manage/user/save" method="post" id="addUser" enctype='multipart/form-data'>
 
-        <?php if (session()->getFlashdata('msg')) : ?>
+        <?php if (session()->getFlashdata('msgErr')) : ?>
             <div class="alert alert-danger"><?= session()->getFlashdata('msgErr') ?></div>
         <?php endif; ?>
             <div class="mb-3">
@@ -21,7 +21,7 @@
 
             <div class="mb-3">
                 <label for="title" class="form-label">Mật khẩu</label>
-                <input type="password" class="form-control" name="password" placeholder="Mật khẩu">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Mật khẩu">
             </div>
 
             <div class="mb-3">
@@ -32,10 +32,15 @@
             <div class="row">
                 <div class="col-md-6 col-12">
                 <div class="mb-3">
-                <label for="title" class="form-label">Quyền</label>
-                <select class="custom-select rounded form-control" name="role">
-                    <option value="admin">Quản trị</option>
-                    <option value="editor" selected>Nhập liệu</option>
+                <label for="title" class="form-label">Nhóm người dùng</label>
+                <select class="custom-select rounded form-control" name="user_group">
+                    <?php 
+                        foreach($user_group as $val){
+                            ?>
+                            <option value="<?= $val['id']?>"><?= $val['name']?></option>
+                            <?php
+                        }
+                    ?>
                 </select>
             </div>
                 </div>

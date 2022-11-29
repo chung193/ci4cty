@@ -20,7 +20,7 @@ echo view('manage/components/breadcrumb', $data)
       foreach ($menu as $val) {
       ?>
         <tr>
-          <td><a href="#"><?= $val['name'] ?></a></td>
+          <td><a href="<?php echo base_url() ?>/manage/menu/item/<?= $val['id']?>"><?= $val['name'] ?></a></td>
           <td><?= $val['code'] ?></td>
           <td>
             <a data-toggle="tooltip" data-placement="top" title="sửa" href="<?= base_url()?>/manage/menu/edit/<?= $val['id']?>" class="text-info"><i class="fas fa-edit"></i></a>

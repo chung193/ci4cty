@@ -32,6 +32,7 @@ class Post extends BaseController
         $session = session();
         $data['data'] = array(
             'site' => $this->site,
+            'type' => 'table',
             'subview'   => '/manage/contents/post/post_view',
             'title'     => "Bài viết",
             'name'      => $session->get('user_name')
@@ -48,6 +49,7 @@ class Post extends BaseController
             'site' => $this->site,
             'subview'   => '/manage/contents/post/add_post_view',
             'title'     => "Thêm bài viết",
+            'type' => 'form',
             'name'      => $session->get('user_name')
         );
         echo view('manage/layout',$data);
@@ -128,6 +130,7 @@ class Post extends BaseController
             return redirect()->to('/manage/post');
         }else{
             $session = session();
+            $session->setFlashdata('post', $_POST);
             $session->setFlashdata('msgErr', $this->validator->listErrors());
             return redirect()->to('/manage/post/add/');
         }
@@ -147,6 +150,7 @@ class Post extends BaseController
                 'site' => $this->site,
                 'subview'   => '/manage/contents/post/edit_post_view',
                 'title'     => "Sửa bài viết",
+                'type' => 'form',
                 'seo' => $seo,
                 'name'      => $session->get('user_name')
             );

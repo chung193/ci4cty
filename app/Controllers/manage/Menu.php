@@ -2,6 +2,7 @@
  
 use CodeIgniter\Controller;
 use App\Models\manage\Menu_model;
+use App\Models\manage\MenuItem_model;
 use App\Models\manage\Info_model;
 
 class Menu extends BaseController
@@ -24,6 +25,7 @@ class Menu extends BaseController
     
         $data['data'] = array(
             'site' => $this->site,
+            'type' => 'table',
             'subview'   => $subview,
             'title'     => "Menu",
             'name'      => $session->get('user_name')
@@ -39,6 +41,7 @@ class Menu extends BaseController
         $data['menu'] = $model->getMenu();
         $data['data'] = array(
             'site' => $this->site,
+            'type' => 'form',
             'subview'   => '/manage/contents/menu/add_menu_view',
             'title'     => "Thêm danh mục",
             'name'      => $session->get('user_name')
@@ -49,8 +52,7 @@ class Menu extends BaseController
     public function save()
     {
         $rules = [
-            'name' => ['label' => 'tên menu','rules' =>'required|max_length[600]'],
-            'code' => ['label' => 'code menu','rules' =>'required|max_length[600]'],
+            'name' => ['label' => 'tên menu','rules' =>'required|max_length[255]'],
         ];
          
         if($this->validate($rules)){
@@ -91,6 +93,7 @@ class Menu extends BaseController
             'site' => $this->site,
             'subview'   => '/manage/contents/menu/edit_menu_view',
             'title'     => "Sửa menu",
+            'type' => 'form',
             // 'seo' => $seo,
             'name'      => $session->get('user_name')
         );
@@ -100,8 +103,7 @@ class Menu extends BaseController
     public function update()
     {
         $rules = [
-            'name' => ['label' => 'tên menu','rules' =>'required|max_length[600]'],
-            'code' => ['label' => 'code','rules' =>'required|max_length[600]'],
+            'name' => ['label' => 'tên menu','rules' =>'required|max_length[255]'],
         ];
 
         $id = $this->request->getPost('id');
@@ -139,4 +141,48 @@ class Menu extends BaseController
         return redirect()->to('/manage/menu');
     }
 
+    public function item($id){
+        // echo $id; die();
+        $model = new Menu_model();
+        $item = new MenuItem_model();
+        $data['menu'] = $model->getMenu($id);
+        $data['menuitem'] = $item->getMenuItem($id);
+        $session = session();
+        $subview = '/manage/contents/menu/item';
+    
+        $data['data'] = array(
+            'site' => $this->site,
+            'subview'   => $subview,
+            'title'     => "Menu",
+            'type' => '',
+            'name'      => $session->get('user_name')
+        );
+        //print_r($data['menuitem']); 
+        //print_r($data['menuitem']); 
+        //die();
+        echo view('manage/layout', $data);
+    }
+
+    public function saveitem(){
+        // echo $id; die();
+        $model = new Menu_model();
+        $item = new MenuItem_model();
+        
+        $data['menuitem'] = $item->getMenuItem($this->request->getPost('menu_id'));
+        $obj = $data['menuitem'];
+        $arr = (array)$data['menuitem'];
+        $data = array(
+            'menu_id'   => $this->request->getPost('menu_id'),
+            'json'   => $this->request->getPost('json'),
+        );
+        if(!count($arr)){
+            $item->saveMenuItem($data);
+        }else{
+            $item->updateMenuItem($data, $obj->id);
+        }
+        $session = session();
+        $session->setFlashdata('msg', 'Thông tin đã được lưu lại');
+        return redirect()->to('/manage/menu/item/'.$this->request->getPost('menu_id'));
+        echo view('manage/layout', $data);
+    }
 }

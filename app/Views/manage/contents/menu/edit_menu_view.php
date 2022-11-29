@@ -7,7 +7,7 @@
     );
     echo view('manage/components/breadcrumb', $data)
     ?>
-    <form action="<?php echo base_url() ?>/manage/menu/update" method="post">
+    <form action="<?php echo base_url() ?>/manage/menu/update" id="editMenu" method="post">
 
       <?php if (session()->getFlashdata('msgErr')) : ?>
         <div class="alert alert-danger"><?= session()->getFlashdata('msgErr') ?></div>

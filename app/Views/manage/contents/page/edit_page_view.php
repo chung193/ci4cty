@@ -7,7 +7,7 @@ echo view('manage/components/breadcrumb', $data)
 
 <div class="row">
     <div class="col-12 col-md-8">
-        <form action="<?php echo base_url() ?>/manage/page/update" method="post" enctype='multipart/form-data'>
+        <form action="<?php echo base_url() ?>/manage/page/update" method="post" id="addPage" enctype='multipart/form-data'>
 
             <?php if (isset($validation)) : ?>
                 <div class="alert alert-danger"><?= $validation->listErrors() ?></div>

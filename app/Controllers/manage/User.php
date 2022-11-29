@@ -4,6 +4,7 @@ use CodeIgniter\Controller;
 use App\Models\manage\User_model;
 use CodeIgniter\Files\File;
 use App\Models\manage\Info_model;
+use App\Models\manage\User_group_model;
 
 class User extends BaseController
 {
@@ -28,6 +29,7 @@ class User extends BaseController
         $session = session();
         $data['data'] = array(
             'site' => $this->site,
+            'type' => 'table',
             'subview'   => '/manage/contents/user/user_view',
             'title'     => "Người dùng",
             'name'      => $session->get('user_name')
@@ -38,10 +40,13 @@ class User extends BaseController
     public function add()
     {
         $session = session();
+        $ugr = new User_group_model();
+        $data['user_group'] = $ugr->getUserGroup();
         $data['data'] = array(
             'site' => $this->site,
             'subview'   => '/manage/contents/user/add_user_view',
             'title'     => "Thêm người dùng",
+            'type' => 'form',
             'name'      => $session->get('user_name')
         );
         echo view('manage/layout',$data);
@@ -78,11 +83,11 @@ class User extends BaseController
                 $basename = $img->getName();
                 $model = new User_model();
                 $data = array(
-                    
+                    'group_id' => $this->request->getPost('group_id'),
                     'nicename' => $this->request->getPost('nicename'),
                     'email' => $this->request->getPost('email'),
                     'profile' => $this->request->getPost('profile'),
-                    'role' => $this->request->getPost('role'),
+                    'group_id' => $this->request->getPost('group_id'),
                     'userimage' => $basename,
                     'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
                 );
@@ -110,11 +115,14 @@ class User extends BaseController
     {
         $model = new User_model();
         $data['user'] = $model->getUser($id)->getRow();
+        $ugr = new User_group_model();
+        $data['user_group'] = $ugr->getUserGroup();
         $session = session();
         $data['data'] = array(
             'site' => $this->site,
             'subview'   => '/manage/contents/user/edit_user_view',
             'title'     => "Sửa thông tin người dùng",
+            'type' => 'form',
             'name'      => $session->get('user_name')
         );
         echo view('manage/layout',$data);
@@ -162,7 +170,7 @@ class User extends BaseController
                         'email' => $this->request->getPost('email'),
                         'profile' => $this->request->getPost('profile'),
                         'nicename' => $this->request->getPost('nicename'),
-                        'role' => $this->request->getPost('role'),
+                        'group_id' => $this->request->getPost('group_id'),
                         'userimage' => $basename,
                     );
                     if($this->request->getVar('password') !== '')
@@ -176,7 +184,7 @@ class User extends BaseController
                     $data = array(
                        
                         'email' => $this->request->getPost('email'),
-                        'role' => $this->request->getPost('role'),
+                        'group_id' => $this->request->getPost('group_id'),
                         'nicename' => $this->request->getPost('nicename'),
                         'profile' => $this->request->getPost('profile'),
                     );

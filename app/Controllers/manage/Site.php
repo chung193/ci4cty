@@ -26,6 +26,7 @@ class Site extends BaseController
         $data['option'] = array_column($model->getOption(), null, "name");
         $session = session();
         $data['data'] = array(
+            'type' => 'table',
             'site' => $this->site,
             'subview'   => '/manage/contents/options/option_view',
             'title'     => "Cấu hình trang",

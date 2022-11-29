@@ -3,7 +3,7 @@
 <div class="bg-light d-flex justify-content-center align-items-center vh-100 ">
   <form class="border p-4 rounded shadow-lg" id="loginForm" method="post" action="<?php echo base_url()?>/auth/sendresetlink">
     <h3><strong>Điền đúng email để lấy lại mật khẩu</strong></h3>
-    <?php if (session()->getFlashdata('msg')) : ?>
+    <?php if (session()->getFlashdata('msgErr')) : ?>
       <div class="alert alert-danger"><?= session()->getFlashdata('msgErr') ?></div>
     <?php endif; ?>
     <div class="form-group mb-3">

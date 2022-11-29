@@ -23,6 +23,7 @@ class Profile extends BaseController
         $data['user'] = $model->getUser($session->get('user_id'))->getRow();
         $data['data'] = array(
             'site' => $this->site,
+            'type' => 'form',
             'subview'   => '/manage/contents/profile/edit_user_view',
             'title'     => "Sửa thông tin cá nhân",
             'name'      => $session->get('user_name')

@@ -10,7 +10,13 @@ class Menu_model extends Model
         if($id === false){
             return $this->findAll();
         }else{
-            return $this->getWhere(['id' => $id]);
+            $db      = \Config\Database::connect();
+            $builder = $db->table($this->table);
+            $builder->select('menu.*');
+            $builder->where('menu.id', $id);
+            $query = $builder->get();
+            return $query->getRow();
+            // return $this->getWhere(['id' => $id]);
         }   
     }
 

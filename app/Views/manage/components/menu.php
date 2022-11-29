@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="<?= base_url()?>">
+        <a class="navbar-brand" href="<?= base_url()?>/manage/dashboard">
             <?php
             $arr = $site['info'];
             if($arr->logo){
@@ -55,7 +55,7 @@
                             <hr class="dropdown-divider m-0">
                         </li>
                         <li><a class="dropdown-item" href="<?= base_url().'/manage/user'?>">Người dùng</a></li>
-                        <li><a class="dropdown-item" href="#">Nhóm người dùng</a></li>
+                        <li><a class="dropdown-item" href="<?= base_url().'/manage/user-group'?>">Nhóm người dùng</a></li>
                         <li>
                             <hr class="dropdown-divider m-0">
                         </li>

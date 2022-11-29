@@ -32,6 +32,7 @@ class Page extends BaseController
         $data['data'] = array(
             'site' => $this->site,
             'subview'   => $subview,
+            'type' => 'table',
             'title'     => "Trang",
             'name'      => $session->get('user_name')
         );
@@ -45,6 +46,7 @@ class Page extends BaseController
             'site' => $this->site,
             'subview'   => '/manage/contents/page/add_page_view',
             'title'     => "Thêm trang",
+            'type' => 'form',
             'name'      => $session->get('user_name')
         );
         echo view('manage/layout',$data);
@@ -99,7 +101,6 @@ class Page extends BaseController
             $data = array(
                 'title'  => $this->request->getPost('title'),
                 'description' => $this->request->getPost('description'),
-                'cat_id' => $this->request->getPost('cat_id'),
                 'authorid' => $session->get('user_id'),
                 'slug' => $slug,
                 'content' => $this->request->getPost('content'),
@@ -120,6 +121,7 @@ class Page extends BaseController
             );
             $this->setSeoContent($seo);
             $session = session();
+            $session->setFlashdata('post', $_POST);
             $session->setFlashdata('msg', "Những thay đổi của bạn đã được lưu lại");
             return redirect()->to('/manage/page');
         }else{
@@ -137,6 +139,7 @@ class Page extends BaseController
         $session = session();
         $data['data'] = array(
             'site' => $this->site,
+            'type' => 'form',
             'subview'   => '/manage/contents/page/edit_page_view',
             'title'     => "Sửa trang",
             'name'      => $session->get('user_name')
@@ -179,7 +182,6 @@ class Page extends BaseController
             $data = array(
                 'title'  => $this->request->getPost('title'),
                 'description' => $this->request->getPost('description'),
-                'cat_id' => $this->request->getPost('cat_id'),
                 'slug' => $slug,
                 'content' => $this->request->getPost('content'),
                 'published' => $published ,

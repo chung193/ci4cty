@@ -1,5 +1,8 @@
 
-
+<?php 
+  $session = session();
+  $post = $session->get('post');
+?>
   <div class="form-group">
     <label class="form-label">Thẻ tiêu đề (meta title)</label>
     <input type="text" name="meta_title" class="form-control" <?php

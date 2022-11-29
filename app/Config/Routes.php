@@ -32,7 +32,7 @@ $routes->set404Override();
  * Route Definitions
  * --------------------------------------------------------------------
  */
-
+$routes->get('auth/logout', 'auth\Login::logout');
 // auth
 $routes->group('auth', ['filter' => 'noauth'], function ($routes) {
     $routes->get('login', 'auth\Login::index', ['as' => 'login']);
@@ -66,6 +66,16 @@ $routes->group('manage', ['filter' => 'role'], function ($routes) {
     $routes->post('category/update', 'manage\Category::update');
     $routes->get('category/delete/(:num)', 'manage\Category::delete/$1');
 
+
+    // user group
+    $routes->get('user-group', 'manage\User_group::index');
+    $routes->get('user-group/add', 'manage\User_group::add');
+    $routes->get('user-group/edit/(:num)', 'manage\User_group::edit/$1');
+    $routes->post('user-group/save', 'manage\User_group::save');
+    $routes->post('user-group/update', 'manage\User_group::update');
+    $routes->get('user-group/delete/(:num)', 'manage\User_group::delete/$1');
+
+
     // menu
     $routes->get('menu', 'manage\Menu::index');
     $routes->get('menu/add', 'manage\Menu::add');
@@ -73,7 +83,8 @@ $routes->group('manage', ['filter' => 'role'], function ($routes) {
     $routes->post('menu/save', 'manage\Menu::save');
     $routes->post('menu/update', 'manage\Menu::update');
     $routes->get('menu/delete/(:num)', 'manage\Menu::delete/$1');
-    
+    $routes->get('menu/item/(:num)', 'manage\Menu::item/$1');
+    $routes->post('menu/updateitem', 'manage\Menu::saveitem');
     // page
     $routes->get('page/add', 'manage\Page::add');
     $routes->get('page/edit/(:num)', 'manage\Page::edit/$1');

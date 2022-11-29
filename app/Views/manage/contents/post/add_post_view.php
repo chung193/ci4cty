@@ -1,4 +1,6 @@
 <?php
+$session = session();
+$post = $session->get('post');
 $data = array(
     'title' => $title
 );
@@ -6,14 +8,13 @@ echo view('manage/components/breadcrumb', $data)
 ?>
 <div class="row mb-3">
     <div class="col-12 col-md-8">
-        <form action="<?php echo base_url() ?>/manage/post/save" method="post" enctype='multipart/form-data'>
-            <?php if (session()->getFlashdata('msg')) : ?>
+        <form action="<?php echo base_url() ?>/manage/post/save" method="post" id="addPost" enctype='multipart/form-data'>
+            <?php if (session()->getFlashdata('msgErr')) : ?>
                 <div class="alert alert-danger"><?= session()->getFlashdata('msgErr') ?></div>
             <?php endif; ?>
-
             <div class="mb-3">
                 <label for="title" class="form-label">Tiêu đề</label>
-                <input type="text" id="title" class="form-control" name="title" placeholder="Tiêu đề">
+                <input type="text" id="title" class="form-control" value="<?php if(isset($post['title'])){ echo $post['title'];}else{ echo '';}?>" name="title" placeholder="Tiêu đề">
             </div>
 
             <div class="row">
@@ -30,7 +31,7 @@ echo view('manage/components/breadcrumb', $data)
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label for="title" class="form-label">Slug</label>
-                        <input type="text" class="form-control" name="slug" placeholder="slug">
+                        <input type="text" class="form-control" name="slug" placeholder="slug" value="<?php if(isset($post['slug'])){ echo $post['slug'];}else{ echo '';}?>">
                     </div>
                 </div>
             </div>
@@ -39,12 +40,12 @@ echo view('manage/components/breadcrumb', $data)
 
             <div class="mb-3">
                 <label for="title" class="form-label">Mô tả</label>
-                <textarea class="form-control" name="description" placeholder="content" rows="3"></textarea>
+                <textarea class="form-control" name="description" placeholder="content" rows="3"><?php if(isset($post['content'])){ echo $post['content'];}else{ echo '';}?></textarea>
             </div>
 
             <div class="mb-3">
                 <label for="title" class="form-label">Nội dung</label>
-                <textarea class="form-control" name="content" style="min-heigh: 400px" placeholder="Nội dung" id="editor" rows="3"></textarea>
+                <textarea class="form-control" name="content" style="min-height: 400px" placeholder="Nội dung" id="editor" rows="3"><?php if(isset($post['title'])){ echo $post['title'];}else{ echo '';}?></textarea>
             </div>
 
 

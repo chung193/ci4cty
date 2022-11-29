@@ -8,8 +8,8 @@
         );
         echo view('manage/components/breadcrumb', $data)
         ?>
-        <form action="<?php echo base_url() ?>/manage/menu/save" method="post">
-            <?php if (session()->getFlashdata('msg')) : ?>
+        <form action="<?php echo base_url() ?>/manage/menu/save" id="addMenu" method="post">
+            <?php if (session()->getFlashdata('msgErr')) : ?>
                 <div class="alert alert-danger"><?= session()->getFlashdata('msgErr') ?></div>
             <?php endif; ?>
 

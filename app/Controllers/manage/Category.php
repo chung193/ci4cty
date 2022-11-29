@@ -27,6 +27,7 @@ class Category extends BaseController
             'site' => $this->site,
             'subview'   => $subview,
             'title'     => "Danh mục",
+            'type' => 'table',
             'name'      => $session->get('user_name')
         );
         
@@ -42,6 +43,7 @@ class Category extends BaseController
             'site' => $this->site,
             'subview'   => '/manage/contents/category/add_category_view',
             'title'     => "Thêm danh mục",
+            'type' => 'form',
             'name'      => $session->get('user_name')
         );
         echo view('manage/layout',$data);
@@ -102,6 +104,7 @@ class Category extends BaseController
             'site' => $this->site,
             'subview'   => '/manage/contents/category/edit_category_view',
             'title'     => "Sửa danh mục",
+            'type' => 'form',
             // 'seo' => $seo,
             'name'      => $session->get('user_name')
         );

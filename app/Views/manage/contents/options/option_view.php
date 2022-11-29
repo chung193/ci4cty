@@ -10,7 +10,7 @@
     ?>
         
         <form action="<?php echo base_url() ?>/manage/options/save" method="post" enctype='multipart/form-data'>
-        <?php if (session()->getFlashdata('msg')) : ?>
+        <?php if (session()->getFlashdata('msgErr')) : ?>
             <div class="alert alert-danger"><?= session()->getFlashdata('msgErr') ?></div>
         <?php endif; ?>
             <h3>Mail</h3>

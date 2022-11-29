@@ -1,8 +1,8 @@
 
 <div class="bg-light d-flex justify-content-center align-items-center vh-100 ">
   <form class="border p-4 rounded shadow-lg" id="regForm" method="post" action="<?php echo base_url()?>/auth/register/save">
-    <h3><strong>Đăng nhập</strong></h3>
-    <?php if (session()->getFlashdata('msg')) : ?>
+    <h3><strong>Đăng ký</strong></h3>
+    <?php if (session()->getFlashdata('msgErr')) : ?>
       <div class="alert alert-danger"><?= session()->getFlashdata('msgErr') ?></div>
     <?php endif; ?>
 
@@ -17,7 +17,7 @@
     </div>
     <div class="form-group mb-3">
       <label for="exampleInputPassword1">Mật khẩu</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Mật khẩu">
+      <input type="password" class="form-control" id="password" name="password" placeholder="Mật khẩu">
     </div>
 
     <div class="form-group mb-3">

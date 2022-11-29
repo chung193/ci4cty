@@ -23,6 +23,7 @@ class Info extends BaseController
         $session = session();
         $data['data'] = array(
             'site' => $this->site,
+            'type' => 'form',
             'subview'   => '/manage/contents/info/edit_info_view',
             'title'     => "Thông tin cửa hàng",
             'name'      => $session->get('user_name')
