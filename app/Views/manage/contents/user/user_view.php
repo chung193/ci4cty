@@ -25,7 +25,7 @@ echo view('manage/components/breadcrumb', $data)
             <tr>
               <td><?= $row['nicename']; ?></td>
               <td><?= $row['email']; ?></td>
-              <td><?= $row['role']; ?></td>
+              <td><?= $row['grname']; ?></td>
               <td>
                 <a  data-toggle="tooltip" data-placement="top" title="sửa"  href="<?php echo base_url() ?>/manage/user/edit/<?= $row['id']; ?>"><i class="fas fa-edit"></i></a>
                 <a  data-toggle="tooltip" data-placement="top" title="xóa"  class="text-danger" href="<?php echo base_url() ?>/manage/user/delete/<?= $row['id']; ?>"><i class="fas fa-times"></i></a>

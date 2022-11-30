@@ -33,7 +33,7 @@
                 <div class="col-md-6 col-12">
                 <div class="mb-3">
                 <label for="title" class="form-label">Nhóm người dùng</label>
-                <select class="custom-select rounded form-control" name="user_group">
+                <select class="custom-select rounded form-control" name="group_id">
                     <?php 
                         foreach($user_group as $val){
                             ?>

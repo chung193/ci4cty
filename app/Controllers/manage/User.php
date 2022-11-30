@@ -103,7 +103,7 @@ class User extends BaseController
                     'nicename' => $this->request->getPost('nicename'),
                     'email' => $this->request->getPost('email'),
                     'profile' => $this->request->getPost('profile'),
-                    'role' => $this->request->getPost('role'),
+                    'group_id' => $this->request->getPost('group_id'),
                     'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
                 );
                 $model->saveUser($data);

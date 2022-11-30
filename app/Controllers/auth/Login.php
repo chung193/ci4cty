@@ -32,7 +32,7 @@ class Login extends Controller
                     'user_name'     => $data['nicename'],
                     'user_email'    => $data['email'],
                     'user_img'      => $data['userimage'],
-                    'user_role'     => $data['role'],
+                    'group_id'     => $data['group_id'],
                     'user_is_superadmin'    => $data['is_superadmin'],
                     'logged_in'     => TRUE
                 ];

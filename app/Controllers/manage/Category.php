@@ -70,7 +70,6 @@ class Category extends BaseController
             $data = array(
                 'title'     => $this->request->getPost('title'),
                 'slug' => $slug,
-                'content' => $this->request->getPost('content'),
             );
             $model->saveCategory($data);
             // thêm mới data seo
@@ -82,8 +81,9 @@ class Category extends BaseController
                 'content_id' => $id_inserted
             );
 
-            // $this->setSeoContent($seo);
-            
+            $this->setSeoContent($seo);
+            $session = session();
+            $session->setFlashdata('msg', 'Dữ liệu cập nhật');
             return redirect()->to('/manage/category');
         }else{
             $session = session();
@@ -96,8 +96,8 @@ class Category extends BaseController
     {
         $model = new Category_model();
         $data['category_list'] = $model->getCategory();
-        $data['category'] = $model->getCategory($id)->getRow();
-        // $seo = $this->getSeoContent($id, 'category')->getRow();
+        $data['category'] = $model->getCategory($id);
+        $seo = $this->getSeoContent($id, 'category')->getRow();
         //print_r($seo);die();
         $session = session();
         $data['data'] = array(
@@ -105,7 +105,7 @@ class Category extends BaseController
             'subview'   => '/manage/contents/category/edit_category_view',
             'title'     => "Sửa danh mục",
             'type' => 'form',
-            // 'seo' => $seo,
+            'seo' => $seo,
             'name'      => $session->get('user_name')
         );
         echo view('manage/layout',$data);
@@ -134,7 +134,6 @@ class Category extends BaseController
             $data = array(
                 'title'  => $this->request->getPost('title'),
                 'slug' => $this->request->getPost('slug'),
-                'content' => $this->request->getPost('content'),
             );
             $model->updateCategory($data, $id);
 
@@ -148,7 +147,9 @@ class Category extends BaseController
                  'content_id' => $id
              );
              // print_r($seo);die();
-             $this->updateSeoContent($seo, $seo_item->id);
+            $this->updateSeoContent($seo, $seo_item->id);
+            $session = session();
+            $session->setFlashdata('msg', 'Dữ liệu cập nhật');
             return redirect()->to('/manage/category');
         }else{
             $session = session();

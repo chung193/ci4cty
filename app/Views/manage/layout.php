@@ -460,6 +460,41 @@
                 $('#btnForks').html(data.forks_count);
             });
         });
+
+        <?php
+        $db = db_connect();
+        $tables = $db->listTables();
+        foreach ($tables as $tb) {
+        ?>
+        var flag=true;
+            $('input[table=<?= $tb ?>]').each(function() {
+                if($(this).prop('checked') !== 'checked' && !$(this).prop('checked')){
+                    flag = false;
+                };
+            });
+            if(flag){
+                $('button[btn=<?= $tb ?>]').text("uncheck all");
+            }
+        flag = true;
+            
+        <?php
+        }
+        ?>
+
+        function checkAll(name) {
+            if ($('button[btn=' + name + ']').text() == "Check all") {
+                $('button[btn=' + name + ']').text("uncheck all");
+                $('input[table=' + name + ']').each(function() {
+                    $(this).attr('checked', 'checked');
+                });
+            } else {
+                $('button[btn=' + name + ']').text("Check all");
+                $('input[table=' + name + ']').each(function() {
+                    $(this).removeAttr('checked');
+                });
+            }
+
+        }
     </script>
 
 </body>

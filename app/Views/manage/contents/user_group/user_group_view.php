@@ -21,7 +21,7 @@ echo view('manage/components/breadcrumb', $data)
       ?>
         <tr>
           <td><?= $val['id'] ?></td>
-          <td><a href="#"><?= $val['name'] ?></a></td>
+          <td><a href="<?= base_url().'/manage/permission/'.$val['id']?>"><?= $val['name'] ?></a></td>
           <td>
             <a data-toggle="tooltip" data-placement="top" title="sửa" class="text-info" href="<?php echo base_url() ?>/manage/user-group/edit/<?= $val['id']; ?>"><i class="fas fa-edit"></i></a>
             <a data-toggle="tooltip" data-placement="top" title="xóa" class="text-danger" href="<?php echo base_url() ?>/manage/user-group/delete/<?= $val['id']; ?>"><i class="fas fa-times"></i></a>

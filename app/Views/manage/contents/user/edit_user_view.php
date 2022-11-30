@@ -34,8 +34,15 @@
                     <div class="mb-3">
                         <label for="title" class="form-label">Quyền</label>
                         <select class="custom-select rounded form-control" name="role" aria-label="Default select example">
-                            <option value="admin" <?php if ($user->role == "admin") echo 'selected' ?>>Quản trị</option>
-                            <option value="editor" <?php if ($user->role == "editor") echo 'selected' ?>>Nhập liệu</option>
+                            <?php 
+                                foreach($user_group as $val){
+                                    if($val['id'] == $user->group_id){
+                                        echo '<option value="'.$val['id'].'" selected>'.$val['name'].'</option>';
+                                    }else{
+                                        echo '<option value="'.$val['id'].'">'.$val['name'].'</option>';
+                                    }
+                                }
+                            ?>
                         </select>
                     </div>
                 </div>

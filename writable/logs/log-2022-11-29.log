@@ -83,3 +83,505 @@ in APPPATH\Views\manage\contents\user_group\edit_user_group_view.php on line 17.
 11 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\User_group))
 12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-11-29 03:21:02 --> mysqli_sql_exception: Column 'role' cannot be null in C:\xampp\htdocs\ci4cty\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\ci4cty\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\ci4cty\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\ci4cty\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\ci4cty\system\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\ci4cty\app\Models\manage\User_model.php(30): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\ci4cty\app\Controllers\manage\User.php(109): App\Models\manage\User_model->saveUser(Array)
+#6 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(927): App\Controllers\manage\User->save()
+#7 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\User))
+#8 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ci4cty\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-11-29 03:21:02 --> Column 'role' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `user` (`nicename`, `email`, `profile`, `role`, `password`) VALUES (\'nam\', \'chungvu@gmail.com\', \'<p>123</p>\', NULL, \'$2y$10$iNuXLBlCWDz7woaCK95d9ekOaaaR2kZ2Fb8Rza5lR1B.w2NcSIRT6\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `user` (`nicename`, `email`, `profile`, `role`, `password`) VALUES (\'nam\', \'chungvu@gmail.com\', \'<p>123</p>\', NULL, \'$2y$10$iNuXLBlCWDz7woaCK95d9ekOaaaR2kZ2Fb8Rza5lR1B.w2NcSIRT6\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `user` (`nicename`, `email`, `profile`, `role`, `password`) VALUES (\'nam\', \'chungvu@gmail.com\', \'<p>123</p>\', NULL, \'$2y$10$iNuXLBlCWDz7woaCK95d9ekOaaaR2kZ2Fb8Rza5lR1B.w2NcSIRT6\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `user` (`nicename`, `email`, `profile`, `role`, `password`) VALUES (:nicename:, :email:, :profile:, :role:, :password:)', [...], false)
+ 5 APPPATH\Models\manage\User_model.php(30): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\manage\User.php(109): App\Models\manage\User_model->saveUser([...])
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\User->save()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\User))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-11-29 03:21:44 --> mysqli_sql_exception: Column 'role' cannot be null in C:\xampp\htdocs\ci4cty\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\ci4cty\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\ci4cty\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\ci4cty\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\ci4cty\system\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\ci4cty\app\Models\manage\User_model.php(30): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\ci4cty\app\Controllers\manage\User.php(109): App\Models\manage\User_model->saveUser(Array)
+#6 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(927): App\Controllers\manage\User->save()
+#7 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\User))
+#8 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ci4cty\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-11-29 03:21:44 --> Column 'role' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `user` (`nicename`, `email`, `profile`, `role`, `password`) VALUES (\'nam\', \'chungvu@gmail.com\', \'<p>1312414124</p>\', NULL, \'$2y$10$vols56PN030/OKr5yUrLz.lTdI2omYvnx/RV14kr6ZmW9WtUQ7RP6\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `user` (`nicename`, `email`, `profile`, `role`, `password`) VALUES (\'nam\', \'chungvu@gmail.com\', \'<p>1312414124</p>\', NULL, \'$2y$10$vols56PN030/OKr5yUrLz.lTdI2omYvnx/RV14kr6ZmW9WtUQ7RP6\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `user` (`nicename`, `email`, `profile`, `role`, `password`) VALUES (\'nam\', \'chungvu@gmail.com\', \'<p>1312414124</p>\', NULL, \'$2y$10$vols56PN030/OKr5yUrLz.lTdI2omYvnx/RV14kr6ZmW9WtUQ7RP6\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `user` (`nicename`, `email`, `profile`, `role`, `password`) VALUES (:nicename:, :email:, :profile:, :role:, :password:)', [...], false)
+ 5 APPPATH\Models\manage\User_model.php(30): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\manage\User.php(109): App\Models\manage\User_model->saveUser([...])
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\User->save()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\User))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-11-29 03:22:52 --> mysqli_sql_exception: Column 'group_id' cannot be null in C:\xampp\htdocs\ci4cty\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\ci4cty\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\ci4cty\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\ci4cty\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\ci4cty\system\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\ci4cty\app\Models\manage\User_model.php(30): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\ci4cty\app\Controllers\manage\User.php(109): App\Models\manage\User_model->saveUser(Array)
+#6 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(927): App\Controllers\manage\User->save()
+#7 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\User))
+#8 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ci4cty\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-11-29 03:22:52 --> Column 'group_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `user` (`nicename`, `email`, `profile`, `group_id`, `password`) VALUES (\'nam\', \'chungvu@gmail.com\', \'<p>fsafggdg</p>\', NULL, \'$2y$10$zGR24wL1PlO6guoN0WrFhOj8nqnNmjXn8oOBmrzTT1G21CmtjoXeW\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `user` (`nicename`, `email`, `profile`, `group_id`, `password`) VALUES (\'nam\', \'chungvu@gmail.com\', \'<p>fsafggdg</p>\', NULL, \'$2y$10$zGR24wL1PlO6guoN0WrFhOj8nqnNmjXn8oOBmrzTT1G21CmtjoXeW\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `user` (`nicename`, `email`, `profile`, `group_id`, `password`) VALUES (\'nam\', \'chungvu@gmail.com\', \'<p>fsafggdg</p>\', NULL, \'$2y$10$zGR24wL1PlO6guoN0WrFhOj8nqnNmjXn8oOBmrzTT1G21CmtjoXeW\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `user` (`nicename`, `email`, `profile`, `group_id`, `password`) VALUES (:nicename:, :email:, :profile:, :group_id:, :password:)', [...], false)
+ 5 APPPATH\Models\manage\User_model.php(30): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\manage\User.php(109): App\Models\manage\User_model->saveUser([...])
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\User->save()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\User))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 03:25:03 --> Undefined array key "role"
+in APPPATH\Views\manage\contents\user\user_view.php on line 28.
+ 1 APPPATH\Views\manage\contents\user\user_view.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "role"', 'APPPATH\\Views\\manage\\contents\\user\\user_view.php', 28)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\contents\\user\\user_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('/manage/contents/user/user_view', [], true)
+ 5 APPPATH\Views\manage\layout.php(57): view('/manage/contents/user/user_view', [...])
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\layout.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('manage/layout', [], true)
+ 9 APPPATH\Controllers\manage\User.php(37): view('manage/layout', [...])
+10 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\User->index()
+11 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\User))
+12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 03:27:33 --> Call to a member function getRow() on null
+in APPPATH\Controllers\manage\Profile.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Profile->index()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Profile))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 03:27:51 --> Call to undefined method stdClass::getRow()
+in APPPATH\Controllers\manage\Profile.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Profile->index()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Profile))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 03:59:07 --> Undefined array key "role"
+in APPPATH\Controllers\auth\Login.php on line 35.
+ 1 APPPATH\Controllers\auth\Login.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "role"', 'APPPATH\\Controllers\\auth\\Login.php', 35)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\auth\Login->auth()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\auth\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 03:59:34 --> Undefined array key "group"
+in APPPATH\Controllers\auth\Login.php on line 35.
+ 1 APPPATH\Controllers\auth\Login.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "group"', 'APPPATH\\Controllers\\auth\\Login.php', 35)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\auth\Login->auth()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\auth\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 03:59:47 --> Undefined array key "group"
+in APPPATH\Controllers\auth\Login.php on line 35.
+ 1 APPPATH\Controllers\auth\Login.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "group"', 'APPPATH\\Controllers\\auth\\Login.php', 35)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\auth\Login->auth()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\auth\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 03:59:58 --> Undefined property: App\Controllers\manage\Dashboard::$load
+in APPPATH\Controllers\manage\BaseController.php on line 48.
+ 1 APPPATH\Controllers\manage\BaseController.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\manage\\Dashboard::$load', 'APPPATH\\Controllers\\manage\\BaseController.php', 48)
+ 2 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\manage\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 3 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 08:34:18 --> Undefined property: App\Controllers\manage\Dashboard::$router
+in APPPATH\Controllers\manage\BaseController.php on line 48.
+ 1 APPPATH\Controllers\manage\BaseController.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\manage\\Dashboard::$router', 'APPPATH\\Controllers\\manage\\BaseController.php', 48)
+ 2 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\manage\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 3 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 09:35:29 --> Undefined property: App\Controllers\manage\Dashboard::$router
+in APPPATH\Controllers\manage\BaseController.php on line 48.
+ 1 APPPATH\Controllers\manage\BaseController.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\manage\\Dashboard::$router', 'APPPATH\\Controllers\\manage\\BaseController.php', 48)
+ 2 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\manage\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 3 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 10:05:50 --> Undefined variable $db
+in APPPATH\Views\manage\contents\permission\permission_view.php on line 22.
+ 1 APPPATH\Views\manage\contents\permission\permission_view.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $db', 'APPPATH\\Views\\manage\\contents\\permission\\permission_view.php', 22)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\contents\\permission\\permission_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('/manage/contents/permission/permission_view', [], true)
+ 5 APPPATH\Views\manage\layout.php(57): view('/manage/contents/permission/permission_view', [...])
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\layout.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('manage/layout', [], true)
+ 9 APPPATH\Controllers\manage\Permission.php(36): view('manage/layout', [...])
+10 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Permission->index('1')
+11 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 19:23:59 --> Undefined variable $table
+in APPPATH\Views\manage\contents\permission\permission_view.php on line 8.
+ 1 APPPATH\Views\manage\contents\permission\permission_view.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $table', 'APPPATH\\Views\\manage\\contents\\permission\\permission_view.php', 8)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\contents\\permission\\permission_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('/manage/contents/permission/permission_view', [], true)
+ 5 APPPATH\Views\manage\layout.php(57): view('/manage/contents/permission/permission_view', [...])
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\layout.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('manage/layout', [], true)
+ 9 APPPATH\Controllers\manage\Permission.php(36): view('manage/layout', [...])
+10 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Permission->index('1')
+11 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 19:24:09 --> Undefined variable $table
+in APPPATH\Views\manage\contents\permission\permission_view.php on line 9.
+ 1 APPPATH\Views\manage\contents\permission\permission_view.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $table', 'APPPATH\\Views\\manage\\contents\\permission\\permission_view.php', 9)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\contents\\permission\\permission_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('/manage/contents/permission/permission_view', [], true)
+ 5 APPPATH\Views\manage\layout.php(57): view('/manage/contents/permission/permission_view', [...])
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\layout.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('manage/layout', [], true)
+ 9 APPPATH\Controllers\manage\Permission.php(36): view('manage/layout', [...])
+10 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Permission->index('1')
+11 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 19:48:50 --> Cannot access offset of type string on string
+in APPPATH\Views\manage\contents\permission\permission_view.php on line 47.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('/manage/contents/permission/permission_view', [], true)
+ 4 APPPATH\Views\manage\layout.php(57): view('/manage/contents/permission/permission_view', [...])
+ 5 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\layout.php')
+ 6 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('manage/layout', [], true)
+ 8 APPPATH\Controllers\manage\Permission.php(37): view('manage/layout', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Permission->index('3')
+10 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+11 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 19:49:26 --> Cannot use object of type stdClass as array
+in APPPATH\Views\manage\contents\permission\permission_view.php on line 46.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('/manage/contents/permission/permission_view', [], true)
+ 4 APPPATH\Views\manage\layout.php(57): view('/manage/contents/permission/permission_view', [...])
+ 5 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\layout.php')
+ 6 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('manage/layout', [], true)
+ 8 APPPATH\Controllers\manage\Permission.php(37): view('manage/layout', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Permission->index('3')
+10 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+11 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 20:02:42 --> Array to string conversion
+in APPPATH\Views\manage\contents\permission\permission_view.php on line 13.
+ 1 APPPATH\Views\manage\contents\permission\permission_view.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Views\\manage\\contents\\permission\\permission_view.php', 13)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\contents\\permission\\permission_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('/manage/contents/permission/permission_view', [], true)
+ 5 APPPATH\Views\manage\layout.php(57): view('/manage/contents/permission/permission_view', [...])
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\layout.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('manage/layout', [], true)
+ 9 APPPATH\Controllers\manage\Permission.php(38): view('manage/layout', [...])
+10 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Permission->index('3')
+11 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-11-29 20:11:03 --> mysqli_sql_exception: Unknown column '{"category":["1","1","1"],"info":["1","1","1"],"menu":["1","1","1"],"menu_item":["1","1","1"],"options":["1","1","1"],"page":["1","1","1"],"permission":["1","1","1"],"post":["1","1","1"],"seo"' in 'field list' in C:\xampp\htdocs\ci4cty\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\ci4cty\system\Database\MySQLi\Connection.php(292): mysqli->query('UPDATE `permiss...', 0)
+#1 C:\xampp\htdocs\ci4cty\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `permiss...')
+#2 C:\xampp\htdocs\ci4cty\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `permiss...')
+#3 C:\xampp\htdocs\ci4cty\system\Database\BaseBuilder.php(2079): CodeIgniter\Database\BaseConnection->query('UPDATE `permiss...', Array, false)
+#4 C:\xampp\htdocs\ci4cty\app\Models\manage\Permission_model.php(37): CodeIgniter\Database\BaseBuilder->update('{"category":["1...', Array)
+#5 C:\xampp\htdocs\ci4cty\app\Controllers\manage\Permission.php(32): App\Models\manage\Permission_model->updatePermission('{"category":["1...', '1')
+#6 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(927): App\Controllers\manage\Permission->index('3')
+#7 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+#8 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ci4cty\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-11-29 20:11:03 --> Unknown column '{"category":["1","1","1"],"info":["1","1","1"],"menu":["1","1","1"],"menu_item":["1","1","1"],"options":["1","1","1"],"page":["1","1","1"],"permission":["1","1","1"],"post":["1","1","1"],"seo"' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('UPDATE `permission` SET `{"category":["1","1","1"],"info":["1","1","1"],"menu":["1","1","1"],"menu_item":["1","1","1"],"options":["1","1","1"],"page":["1","1","1"],"permission":["1","1","1"],"post":["1","1","1"],"seo":["1","1","1"],"user":["1","1","1"],"user_group":["1","1","1"]}` = \'\'
+WHERE `id` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `permission` SET `{"category":["1","1","1"],"info":["1","1","1"],"menu":["1","1","1"],"menu_item":["1","1","1"],"options":["1","1","1"],"page":["1","1","1"],"permission":["1","1","1"],"post":["1","1","1"],"seo":["1","1","1"],"user":["1","1","1"],"user_group":["1","1","1"]}` = \'\'
+WHERE `id` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `permission` SET `{"category":["1","1","1"],"info":["1","1","1"],"menu":["1","1","1"],"menu_item":["1","1","1"],"options":["1","1","1"],"page":["1","1","1"],"permission":["1","1","1"],"post":["1","1","1"],"seo":["1","1","1"],"user":["1","1","1"],"user_group":["1","1","1"]}` = \'\'
+WHERE `id` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2079): CodeIgniter\Database\BaseConnection->query('UPDATE `permission` SET `{"category":["1","1","1"],"info":["1","1","1"],"menu":["1","1","1"],"menu_item":["1","1","1"],"options":["1","1","1"],"page":["1","1","1"],"permission":["1","1","1"],"post":["1","1","1"],"seo":["1","1","1"],"user":["1","1","1"],"user_group":["1","1","1"]}` = :{"category":["1","1","1"],"info":["1","1","1"],"menu":["1","1","1"],"menu_item":["1","1","1"],"options":["1","1","1"],"page":["1","1","1"],"permission":["1","1","1"],"post":["1","1","1"],"seo":["1","1","1"],"user":["1","1","1"],"user_group":["1","1","1"]}:
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Models\manage\Permission_model.php(37): CodeIgniter\Database\BaseBuilder->update('{"category":["1","1","1"],"info":["1","1","1"],"menu":["1","1","1"],"menu_item":["1","1","1"],"options":["1","1","1"],"page":["1","1","1"],"permission":["1","1","1"],"post":["1","1","1"],"seo":["1","1","1"],"user":["1","1","1"],"user_group":["1","1","1"]}', [...])
+ 6 APPPATH\Controllers\manage\Permission.php(32): App\Models\manage\Permission_model->updatePermission('{"category":["1","1","1"],"info":["1","1","1"],"menu":["1","1","1"],"menu_item":["1","1","1"],"options":["1","1","1"],"page":["1","1","1"],"permission":["1","1","1"],"post":["1","1","1"],"seo":["1","1","1"],"user":["1","1","1"],"user_group":["1","1","1"]}', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Permission->index('3')
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 20:17:30 --> Undefined array key 3
+in APPPATH\Views\manage\contents\permission\permission_view.php on line 71.
+ 1 APPPATH\Views\manage\contents\permission\permission_view.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 3', 'APPPATH\\Views\\manage\\contents\\permission\\permission_view.php', 71)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\contents\\permission\\permission_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('/manage/contents/permission/permission_view', [], true)
+ 5 APPPATH\Views\manage\layout.php(57): view('/manage/contents/permission/permission_view', [...])
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\layout.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('manage/layout', [], true)
+ 9 APPPATH\Controllers\manage\Permission.php(51): view('manage/layout', [...])
+10 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Permission->index('3')
+11 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 20:19:57 --> Undefined array key 3
+in APPPATH\Views\manage\contents\permission\permission_view.php on line 71.
+ 1 APPPATH\Views\manage\contents\permission\permission_view.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 3', 'APPPATH\\Views\\manage\\contents\\permission\\permission_view.php', 71)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\contents\\permission\\permission_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('/manage/contents/permission/permission_view', [], true)
+ 5 APPPATH\Views\manage\layout.php(57): view('/manage/contents/permission/permission_view', [...])
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\layout.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('manage/layout', [], true)
+ 9 APPPATH\Controllers\manage\Permission.php(51): view('manage/layout', [...])
+10 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Permission->index('3')
+11 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 20:19:57 --> Undefined array key 3
+in APPPATH\Views\manage\contents\permission\permission_view.php on line 71.
+ 1 APPPATH\Views\manage\contents\permission\permission_view.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 3', 'APPPATH\\Views\\manage\\contents\\permission\\permission_view.php', 71)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\contents\\permission\\permission_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('/manage/contents/permission/permission_view', [], true)
+ 5 APPPATH\Views\manage\layout.php(57): view('/manage/contents/permission/permission_view', [...])
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\layout.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('manage/layout', [], true)
+ 9 APPPATH\Controllers\manage\Permission.php(51): view('manage/layout', [...])
+10 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Permission->index('3')
+11 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 20:19:58 --> Undefined array key 3
+in APPPATH\Views\manage\contents\permission\permission_view.php on line 71.
+ 1 APPPATH\Views\manage\contents\permission\permission_view.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 3', 'APPPATH\\Views\\manage\\contents\\permission\\permission_view.php', 71)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\contents\\permission\\permission_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('/manage/contents/permission/permission_view', [], true)
+ 5 APPPATH\Views\manage\layout.php(57): view('/manage/contents/permission/permission_view', [...])
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\layout.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('manage/layout', [], true)
+ 9 APPPATH\Controllers\manage\Permission.php(51): view('manage/layout', [...])
+10 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Permission->index('3')
+11 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 20:20:22 --> Attempt to read property "permission" on null
+in APPPATH\Views\manage\contents\permission\permission_view.php on line 4.
+ 1 APPPATH\Views\manage\contents\permission\permission_view.php(4): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "permission" on null', 'APPPATH\\Views\\manage\\contents\\permission\\permission_view.php', 4)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\contents\\permission\\permission_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('/manage/contents/permission/permission_view', [], true)
+ 5 APPPATH\Views\manage\layout.php(57): view('/manage/contents/permission/permission_view', [...])
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\layout.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('manage/layout', [], true)
+ 9 APPPATH\Controllers\manage\Permission.php(51): view('manage/layout', [...])
+10 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Permission->index('4')
+11 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 20:38:54 --> Undefined variable $tb
+in APPPATH\Views\manage\contents\permission\permission_view.php on line 51.
+ 1 APPPATH\Views\manage\contents\permission\permission_view.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $tb', 'APPPATH\\Views\\manage\\contents\\permission\\permission_view.php', 51)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\contents\\permission\\permission_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('/manage/contents/permission/permission_view', [], true)
+ 5 APPPATH\Views\manage\layout.php(57): view('/manage/contents/permission/permission_view', [...])
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\layout.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('manage/layout', [], true)
+ 9 APPPATH\Controllers\manage\Permission.php(51): view('manage/layout', [...])
+10 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Permission->index('4')
+11 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 21:50:57 --> /ci4cty/manage/permission/4 route không thể được tìm thấy trong khi định tuyến ngược.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('/ci4cty/manage/permission/4')
+ 2 SYSTEMPATH\Common.php(860): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\manage\Permission.php(40): redirect('/ci4cty/manage/permission/4', 'refresh')
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Permission->index('4')
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 21:51:24 --> Undefined property: App\Controllers\manage\Permission::$uri
+in APPPATH\Controllers\manage\Permission.php on line 40.
+ 1 APPPATH\Controllers\manage\Permission.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\manage\\Permission::$uri', 'APPPATH\\Controllers\\manage\\Permission.php', 40)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Permission->index('4')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 21:52:11 --> /ci4cty/manage/permission/4 route không thể được tìm thấy trong khi định tuyến ngược.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('/ci4cty/manage/permission/4')
+ 2 SYSTEMPATH\Common.php(860): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\manage\Permission.php(40): redirect('/ci4cty/manage/permission/4', 'refresh')
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Permission->index('4')
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 21:52:36 --> Undefined property: App\Controllers\manage\Permission::$index
+in APPPATH\Controllers\manage\Permission.php on line 40.
+ 1 APPPATH\Controllers\manage\Permission.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\manage\\Permission::$index', 'APPPATH\\Controllers\\manage\\Permission.php', 40)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Permission->index('4')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 21:54:00 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 16777224 bytes)
+in SYSTEMPATH\Events\Events.php on line 152.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 22:02:15 --> Attempt to read property "permission" on null
+in APPPATH\Views\manage\contents\permission\permission_view.php on line 4.
+ 1 APPPATH\Views\manage\contents\permission\permission_view.php(4): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "permission" on null', 'APPPATH\\Views\\manage\\contents\\permission\\permission_view.php', 4)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\contents\\permission\\permission_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('/manage/contents/permission/permission_view', [], true)
+ 5 APPPATH\Views\manage\layout.php(57): view('/manage/contents/permission/permission_view', [...])
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\manage\\layout.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('manage/layout', [], true)
+ 9 APPPATH\Controllers\manage\Permission.php(40): view('manage/layout', [...])
+10 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Permission->index('2')
+11 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Permission))
+12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-11-29 22:23:23 --> mysqli_sql_exception: Unknown column 'user.lastname' in 'field list' in C:\xampp\htdocs\ci4cty\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\ci4cty\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `page`.*...', 0)
+#1 C:\xampp\htdocs\ci4cty\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `page`.*...')
+#2 C:\xampp\htdocs\ci4cty\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `page`.*...')
+#3 C:\xampp\htdocs\ci4cty\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `page`.*...', Array, false)
+#4 C:\xampp\htdocs\ci4cty\app\Models\manage\Page_model.php(15): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci4cty\app\Controllers\manage\Page.php(23): App\Models\manage\Page_model->getPage()
+#6 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(927): App\Controllers\manage\Page->index()
+#7 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Page))
+#8 C:\xampp\htdocs\ci4cty\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ci4cty\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-11-29 22:23:23 --> Unknown column 'user.lastname' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `page`.*, `user`.`lastname` as `username`
+FROM `page`
+JOIN `user` ON `user`.`id` = `page`.`authorid`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `page`.*, `user`.`lastname` as `username`
+FROM `page`
+JOIN `user` ON `user`.`id` = `page`.`authorid`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `page`.*, `user`.`lastname` as `username`
+FROM `page`
+JOIN `user` ON `user`.`id` = `page`.`authorid`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `page`.*, `user`.`lastname` as `username`
+FROM `page`
+JOIN `user` ON `user`.`id` = `page`.`authorid`', [], false)
+ 5 APPPATH\Models\manage\Page_model.php(15): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\manage\Page.php(23): App\Models\manage\Page_model->getPage()
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\manage\Page->index()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\manage\Page))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 22:56:49 --> Undefined variable $add
+in APPPATH\Controllers\manage\BaseController.php on line 91.
+ 1 APPPATH\Controllers\manage\BaseController.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $add', 'APPPATH\\Controllers\\manage\\BaseController.php', 91)
+ 2 APPPATH\Controllers\manage\BaseController.php(51): App\Controllers\manage\BaseController->permission()
+ 3 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\manage\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 4 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 23:38:54 --> Undefined array key "post"
+in APPPATH\Controllers\manage\BaseController.php on line 98.
+ 1 APPPATH\Controllers\manage\BaseController.php(98): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "post"', 'APPPATH\\Controllers\\manage\\BaseController.php', 98)
+ 2 APPPATH\Controllers\manage\BaseController.php(51): App\Controllers\manage\BaseController->permission()
+ 3 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\manage\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 4 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 23:39:08 --> Undefined array key "post"
+in APPPATH\Controllers\manage\BaseController.php on line 98.
+ 1 APPPATH\Controllers\manage\BaseController.php(98): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "post"', 'APPPATH\\Controllers\\manage\\BaseController.php', 98)
+ 2 APPPATH\Controllers\manage\BaseController.php(51): App\Controllers\manage\BaseController->permission()
+ 3 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\manage\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 4 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 23:40:39 --> Cannot access offset of type string on string
+in APPPATH\Controllers\manage\BaseController.php on line 100.
+ 1 APPPATH\Controllers\manage\BaseController.php(51): App\Controllers\manage\BaseController->permission()
+ 2 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\manage\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 3 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 23:41:04 --> Cannot access offset of type string on string
+in APPPATH\Controllers\manage\BaseController.php on line 100.
+ 1 APPPATH\Controllers\manage\BaseController.php(51): App\Controllers\manage\BaseController->permission()
+ 2 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\manage\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 3 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 23:41:11 --> Cannot access offset of type string on string
+in APPPATH\Controllers\manage\BaseController.php on line 100.
+ 1 APPPATH\Controllers\manage\BaseController.php(51): App\Controllers\manage\BaseController->permission()
+ 2 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\manage\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 3 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 23:41:21 --> Cannot access offset of type string on string
+in APPPATH\Controllers\manage\BaseController.php on line 100.
+ 1 APPPATH\Controllers\manage\BaseController.php(51): App\Controllers\manage\BaseController->permission()
+ 2 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\manage\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 3 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 23:41:54 --> Undefined array key "post"
+in APPPATH\Controllers\manage\BaseController.php on line 100.
+ 1 APPPATH\Controllers\manage\BaseController.php(100): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "post"', 'APPPATH\\Controllers\\manage\\BaseController.php', 100)
+ 2 APPPATH\Controllers\manage\BaseController.php(51): App\Controllers\manage\BaseController->permission()
+ 3 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\manage\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 4 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 23:42:07 --> Undefined array key "post"
+in APPPATH\Controllers\manage\BaseController.php on line 100.
+ 1 APPPATH\Controllers\manage\BaseController.php(100): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "post"', 'APPPATH\\Controllers\\manage\\BaseController.php', 100)
+ 2 APPPATH\Controllers\manage\BaseController.php(51): App\Controllers\manage\BaseController->permission()
+ 3 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\manage\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 4 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

@@ -4,14 +4,32 @@ use CodeIgniter\Model;
 class User_model extends Model
 {
     protected $table = 'user';
-    protected $allowedFields = ['firstname','email','middlename','lastname', 'password','profile','lastlogin','registered','userimage', 'role', 'nicename', 'is_superadmin'];
+    protected $allowedFields = ['firstname','email','middlename','lastname', 'password','profile','lastlogin','registered','userimage', 'user_group', 'nicename'];
 
     public function getUser($id = false)
     {
+        $db      = \Config\Database::connect();
+        $builder = $db->table($this->table);
+        if($id == 1){
+            $builder->select('user.*');
+            $builder->where('user.id', $id);
+            $query = $builder->get();
+            return $query->getRow();
+        }
+
         if($id === false){
-            return $this->findAll();
+            $builder->select('user.*, user_group.name as grname');
+            $builder->join('user_group', 'user_group.id = user.group_id');
+            $builder->orderBy('id', 'DESC');
+            $query = $builder->get();
+            return $query->getResultArray();
         }else{
-            return $this->getWhere(['id' => $id]);
+            $builder->select('user.*, user_group.name as grname');
+            $builder->join('user_group', 'user_group.id = user.group_id');
+            $builder->where('user.id', $id);
+            $builder->orderBy('id', 'DESC');
+            $query = $builder->get();
+            return $query->getRow();
         }   
     }
 

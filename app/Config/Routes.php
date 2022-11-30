@@ -44,7 +44,12 @@ $routes->group('auth', ['filter' => 'noauth'], function ($routes) {
     $routes->get('redirect/(:num)/(:any)', 'auth\Forgot::loadresetpage/$1/$2'); // 1st param is id, 2nd is token
     $routes->post('resetpassword', 'auth/Forgot::updatepassword');
 });
+$routes->group('manage', ['filter' => 'role'], function ($routes) {
+    
+});
+
 $routes->group('manage', ['filter' => 'auth'], function ($routes) {
+
     // dashboard
     $routes->get('dashboard', 'manage\Dashboard::index');
     $routes->get('category', 'manage\Category::index');
@@ -55,10 +60,9 @@ $routes->group('manage', ['filter' => 'auth'], function ($routes) {
     // profile
     $routes->get('profile', 'manage\Profile::index');
     $routes->post('profile/update', 'manage\Profile::update');
-});
 
-$routes->group('manage', ['filter' => 'role'], function ($routes) {
-
+    $routes->get('permission/(:num)', 'manage\Permission::index/$1');
+    $routes->post('save-permission', 'manage\Permission::savePermission');
     // category
     $routes->add('category/edit/(:num)', 'manage\Category::edit/$1');
     $routes->get('category/add', 'manage\Category::add');
@@ -85,12 +89,21 @@ $routes->group('manage', ['filter' => 'role'], function ($routes) {
     $routes->get('menu/delete/(:num)', 'manage\Menu::delete/$1');
     $routes->get('menu/item/(:num)', 'manage\Menu::item/$1');
     $routes->post('menu/updateitem', 'manage\Menu::saveitem');
+
     // page
     $routes->get('page/add', 'manage\Page::add');
     $routes->get('page/edit/(:num)', 'manage\Page::edit/$1');
     $routes->post('page/save', 'manage\Page::save');
     $routes->post('page/update', 'manage\Page::update');
     $routes->get('page/delete/(:num)', 'manage\Page::delete/$1');
+
+    // seo
+    $routes->get('seo', 'manage\Seo::index');
+    $routes->get('seo/add', 'manage\Seo::add');
+    $routes->get('seo/edit/(:num)', 'manage\Seo::edit/$1');
+    $routes->post('seo/save', 'manage\Seo::save');
+    $routes->post('seo/update', 'manage\Seo::update');
+    $routes->get('seo/delete/(:num)', 'manage\Seo::delete/$1');
 
     // post
     $routes->get('post', 'manage\Post::index');
@@ -111,8 +124,8 @@ $routes->group('manage', ['filter' => 'role'], function ($routes) {
     $routes->get('user/delete/(:num)', 'manage\User::delete/$1');
 
     // option
-    $routes->get('options', 'manage\Site::index');
-    $routes->post('options/save', 'manage/Site::save');
+    $routes->get('options', 'manage\Options::index');
+    $routes->post('options/save', 'manage/Options::save');
 
     // shop_info
     $routes->add('info/edit/(:num)', 'manage\Info::edit/$1');

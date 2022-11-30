@@ -156,7 +156,6 @@ if (!function_exists('calc_bd')) {
 if (!function_exists('cat_table')) {
     function cat_table($cat, $parent_id = 0, $char = "")
     {
-        try {
             foreach($cat as $key => $val){
                 if($val['parent_id'] == $parent_id){
                     echo '
@@ -171,14 +170,10 @@ if (!function_exists('cat_table')) {
                     </tr>
                     ';
                     unset($cat[$key]);
-                    cat_table($cat, $val['id'], $char = '&#9866; ' );
+                    cat_table($cat, $val['id'], $char . '&#9866; ' );
                 }
             }
         }
-        catch (Exception $e) {
-            echo "Message: " . $e->getMessage();
-        }
-    }
 }
 
 if (!function_exists('showCategories')) {

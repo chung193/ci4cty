@@ -1,9 +1,12 @@
-<?php namespace App\Controllers\manage;
- 
+<?php
+
+namespace App\Controllers\manage;
+
 use CodeIgniter\Controller;
 use App\Models\manage\Category_model;
 use App\Models\manage\Info_model;
 use App\Models\manage\User_group_model;
+use App\Models\manage\Permission_model;
 
 class User_group extends BaseController
 {
@@ -22,7 +25,7 @@ class User_group extends BaseController
         $data['user_group'] = $model->getUserGroup();
         $session = session();
         $subview = '/manage/contents/user_group/user_group_view';
-    
+
         $data['data'] = array(
             'site' => $this->site,
             'subview'   => $subview,
@@ -30,8 +33,8 @@ class User_group extends BaseController
             'type' => 'table',
             'name'      => $session->get('user_name')
         );
-        
-        echo view('manage/layout',$data);
+
+        echo view('manage/layout', $data);
     }
 
     public function add()
@@ -45,27 +48,47 @@ class User_group extends BaseController
             'type' => 'form',
             'name'      => $session->get('user_name')
         );
-        echo view('manage/layout',$data);
+        echo view('manage/layout', $data);
     }
- 
+
     public function save()
     {
         $rules = [
-            'name'      => ['label' => 'tên','rules' =>'required|max_length[255]'],
+            'name'      => ['label' => 'tên', 'rules' => 'required|max_length[255]'],
         ];
-         
-        if($this->validate($rules)){
+
+        if ($this->validate($rules)) {
             $model = new User_group_model();
 
             $data = array(
                 'name'     => $this->request->getPost('name')
             );
             $model->saveUserGroup($data);
-            
+            $gr_id = $model->insertID();
+
+            $db = db_connect();
+            $tables = $db->listTables();
+            $demo = array();
+            foreach ($tables as $tb) {
+                $demo[$tb] = array(
+                    '0' => 0, 
+                    '1' => 0, 
+                    '2' => 0, 
+                    '3' => 0
+                );
+            }
+            $permission = json_encode($demo);
+            $per_md = new Permission_model();
+            $per = array(
+                'group_id' => $gr_id,
+                'permission' => $permission
+            );
+            $per_md->savePermission($per);
+
             $session = session();
             $session->setFlashdata('msg', "Thông tin đã được lưu lại");
             return redirect()->to('/manage/user-group');
-        }else{
+        } else {
             $session = session();
             $session->setFlashdata('post', $_POST);
             $session->setFlashdata('msgErr', $this->validator->listErrors());
@@ -73,12 +96,12 @@ class User_group extends BaseController
         }
     }
 
-    public function edit($id=false)
+    public function edit($id = false)
     {
         $session = session();
         $model = new User_group_model();
         $data['user_group'] = $model->getUserGroup($id);
-        
+
 
         $data['data'] = array(
             'site' => $this->site,
@@ -87,32 +110,32 @@ class User_group extends BaseController
             'type' => 'form',
             'name'      => $session->get('user_name')
         );
-        echo view('manage/layout',$data);
+        echo view('manage/layout', $data);
     }
- 
+
     public function update()
     {
         // print_r($_POST); die();
         $rules = [
-            'name' => ['label' => 'tên','rules' =>'required|max_length[255]'],
+            'name' => ['label' => 'tên', 'rules' => 'required|max_length[255]'],
         ];
 
         $id = $this->request->getPost('id');
         $session = session();
-        if($this->validate($rules)){
+        if ($this->validate($rules)) {
             $model = new User_group_model();
 
-            
+
             $data = array(
                 'name'  => $this->request->getPost('name'),
             );
             $model->updateUserGroup($data, $id);
-            
+
             $session->setFlashdata('msg', 'Nội dung đã được lưu lại');
             return redirect()->to('/manage/user-group');
-        }else{
+        } else {
             $session->setFlashdata('msgErr', $this->validator->listErrors());
-            return redirect()->to('/manage/user-group/edit/'.$id);
+            return redirect()->to('/manage/user-group/edit/' . $id);
         }
     }
 
@@ -122,5 +145,4 @@ class User_group extends BaseController
         $model->deleteUserGroup($id);
         return redirect()->to('/manage/user-group');
     }
-
 }

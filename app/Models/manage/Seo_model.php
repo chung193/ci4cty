@@ -1,17 +1,25 @@
-<?php namespace App\Models\manage;
+<?php
+
+namespace App\Models\manage;
+
 use CodeIgniter\Model;
- 
+
 class Seo_model extends Model
 {
     protected $table = 'seo';
-     
+
     public function getseo($id = false, $type = false)
     {
-        if($id === false){
-            return $this->findAll();
-        }else{
+        $db      = \Config\Database::connect();
+        $builder = $db->table($this->table);
+        if ($id === false) {
+            $builder->select('seo.*');
+            $builder->orderBy('id', 'DESC');
+            $query = $builder->get();
+            return $query->getResultArray();
+        } else {
             return $this->getWhere(['content_id' => $id, 'content_type' => $type]);
-        }   
+        }
     }
 
     public function saveseo($data)
@@ -31,7 +39,4 @@ class Seo_model extends Model
         $query = $this->db->table($this->table)->delete(array('id' => $id));
         return $query;
     }
-
-    
- 
 }

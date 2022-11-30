@@ -20,7 +20,7 @@ class Profile extends BaseController
     {
         $session = session();
         $model = new User_model();
-        $data['user'] = $model->getUser($session->get('user_id'))->getRow();
+        $data['user'] = $model->getUser($session->get('user_id'));
         $data['data'] = array(
             'site' => $this->site,
             'type' => 'form',

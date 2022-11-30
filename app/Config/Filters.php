@@ -25,7 +25,6 @@ class Filters extends BaseConfig
         'secureheaders' => SecureHeaders::class,
         'auth'          => \App\Filters\Auth::class,
         "noauth"        => \App\Filters\Noauth::class,
-        "role"          => \App\Filters\Role::class,
         'cors'          => \App\Filters\Cors::class
     ];
 

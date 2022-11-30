@@ -9,6 +9,7 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use App\Models\manage\Seo_model;
+use App\Models\manage\Permission_model;
 
 /**
  * Class BaseController
@@ -37,7 +38,7 @@ abstract class BaseController extends Controller
      * @var array
      */
     protected $helpers = ['common', 'string'];
-
+    protected $controllerList;
     /**
      * Constructor.
      */
@@ -45,16 +46,16 @@ abstract class BaseController extends Controller
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
-
         // Preload any models, libraries, etc, here.
-
         // E.g.: $this->session = \Config\Services::session();
+        $this->permission();
     }
 
-    public function setSeoContent($data){
+    public function setSeoContent($data)
+    {
         $seo_md = new seo_model();
         $seo_md->saveseo($data);
-    } 
+    }
 
     // public function dob(){
     //     $cus_md = new Shop_Customer_model();
@@ -66,14 +67,79 @@ abstract class BaseController extends Controller
     //     }
     // } 
 
-    public function getSeoContent($content_id, $type){
+    public function getSeoContent($content_id, $type)
+    {
         $seo_md = new seo_model();
         $query = $seo_md->getseo($content_id, $type);
         return $query;
-    } 
+    }
 
-    public function updateSeoContent($data, $id){
+    public function updateSeoContent($data, $id)
+    {
         $seo_md = new seo_model();
         $seo_md->updateseo($data, $id);
-    } 
+    }
+
+    public function permission()
+    {
+        $permission_md = new Permission_model();
+        $session = session();
+        if($session->get('user_is_superadmin')){
+            // do nothing
+            return true;
+        }else{
+            $group_id = $session->get('group_id');
+            $permission = $permission_md->getPermission($group_id);
+            // $permission = (array)$permission['permission'];
+            $router = service('router');
+            $controller = class_basename($router->controllerName());
+            $method = $router->methodName();
+    
+            
+            $controller =  strtolower($controller);
+            $method = strtolower($method);
+            if($controller == 'dashboard' || $controller == 'profile'){
+                return true;
+            }
+            // echo $controller;
+            $permission = (array)json_decode($permission->permission);
+            // $role = array("edit", "add", "save", "update", "delete");
+            // $temp = array("create", "index", "update", "delete");
+            // print_r($permission[$controller]);
+            $flag = false;
+            if (isset($permission[$controller])) {
+                switch ($method) {
+                    case 'index':
+                        if((int)$permission[$controller][1]) $flag = true;
+                        break;
+                    case 'edit':
+                        if((int)$permission[$controller][2]) $flag = true;
+                        break;
+                    case 'add':
+                        if((int)$permission[$controller][0]) $flag = true;
+                        break;
+                    case 'save':
+                        if((int)$permission[$controller][0]) $flag = true;
+                        break;
+                    case 'update':
+                        if((int)$permission[$controller][2]) $flag = true;
+                        break;
+                    case 'delete':
+                        if((int)$permission[$controller][3]) $flag = true;
+                        break;
+                    default:
+                        $flag = false;
+                }
+                
+                if(!$flag){
+                    echo '<h1>Access denied</h1>';
+                    die();
+                }
+                
+            }else{
+                echo '<h1>Access denied</h1>';
+                die();
+            }
+        }
+    }
 }

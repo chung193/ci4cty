@@ -5,6 +5,7 @@
     $data = array(
         'title' => $title
     );
+    
     echo view('manage/components/breadcrumb', $data)
     ?>
         

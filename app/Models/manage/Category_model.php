@@ -10,7 +10,11 @@ class Category_model extends Model
         if($id === false){
             return $this->findAll();
         }else{
-            return $this->getWhere(['id' => $id]);
+            $db      = \Config\Database::connect();
+            $builder = $db->table($this->table);
+            $builder->where('id', $id);
+            $query = $builder->get();
+            return $query->getRow();
         }   
     }
 
