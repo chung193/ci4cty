@@ -26,11 +26,11 @@
     <script>
         function downLoad() {
             if (document.all) {
-                document.all["layer1"].style.visibility = "hidden";
-                document.all["layer2"].style.visibility = "visible";
+                document.all["layer1"].style.display = "none";
+                document.all["layer2"].style.display = "block";
             } else if (document.getElementById) {
-                node = document.getElementById("layer1").style.visibility = 'hidden';
-                node = document.getElementById("layer2").style.visibility = 'visible';
+                node = document.getElementById("layer1").style.display = 'none';
+                node = document.getElementById("layer2").style.display = 'block';
             }
         }
     </script>
@@ -38,12 +38,13 @@
         label.error {
             color: red;
         }
+
     </style>
 </head>
 
 <body onload="downLoad()">
 
-    <div id="layer1" class="layer1_class d-flex justify-content-center align-items-center vh-100 w-100">
+    <div id="layer1" class="layer1_class vh-100 w-100">
         <img src="<?= base_url() . '/public/backend/' ?>img/loading.gif" />
     </div>
 

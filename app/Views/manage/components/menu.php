@@ -30,6 +30,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url().'/manage/category'?>">Danh mục</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url().'/manage/seo'?>">SEO</a>
+                </li>
             </ul>
 
             <ul class="navbar-nav navbar-right">
