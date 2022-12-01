@@ -45,3 +45,9 @@ a{
         li{}
     }
 }
+
+.navbar-expand-sm .navbar-nav .dropdown-menu {
+    padding:0;
+    top:50px;
+    border-radius: 0;
+}

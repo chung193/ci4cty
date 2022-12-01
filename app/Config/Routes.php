@@ -130,6 +130,15 @@ $routes->group('manage', ['filter' => 'auth'], function ($routes) {
     $routes->post('info/save', 'manage\Info::save');
     $routes->post('info/update', 'manage\Info::update');
     $routes->get('info/delete/(:num)', 'manage\Info::delete/$1');
+
+    // shop_slider
+    $routes->get('slider', 'manage\Slider::index');
+    $routes->add('slider/edit/(:num)', 'manage\Slider::edit/$1');
+    $routes->get('slider/add', 'manage\Slider::add');
+    $routes->post('slider/save', 'manage\Slider::save');
+    $routes->post('slider/update', 'manage\Slider::update');
+    $routes->get('slider/delete/(:num)', 'manage\Slider::delete/$1');
+
 });
 
 // We get a performance increase by specifying the default

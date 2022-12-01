@@ -11,15 +11,10 @@ class User extends BaseController
     public $site;
     public function __construct()
     {
-        if (!session()->get('user_is_superadmin')) {
-            echo '<h1>Access denied</h1>';
-            exit;
-        }else{
             $info_md = new Info_model();
             $this->site = array(
                 'info' => $info_md->getInfo()
             );
-        }
     }
 
     public function index()

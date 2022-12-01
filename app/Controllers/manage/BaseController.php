@@ -132,12 +132,12 @@ abstract class BaseController extends Controller
                 }
                 
                 if(!$flag){
-                    echo '<h1>Access denied</h1>';
+                    echo view('errors/html/common_error');
                     die();
                 }
                 
             }else{
-                echo '<h1>Access denied</h1>';
+                echo view('errors/html/common_error');
                 die();
             }
         }

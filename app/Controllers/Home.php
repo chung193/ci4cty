@@ -20,10 +20,14 @@ class Home extends BaseController
     }
 
     public function offline(){
-        echo '<h1>Trang web hiện đang offline</h1>';
+        echo view('errors/html/common_error');
     }
+
     public function index()
     {
-       echo view('frontend/layout');
+        $data['data'] = array(
+            'subview' => 'frontend/contents/home/index'
+        );
+       echo view('frontend/layout', $data);
     }
 }

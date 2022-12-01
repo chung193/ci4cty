@@ -129,4 +129,45 @@ $(document).ready(function () {
     }
   });
 
+  $("#addSlider").validate({
+    onsubmit: true,
+    rules: {
+      "main_title": {
+        required: true,
+      },
+      "url": {
+        required: true,
+      }
+    },
+    messages: {
+      "main_title": {
+        required: "Trường này là bắt buộc",
+      },
+      "url": {
+        required: "Trường này là bắt buộc",
+      },
+    }
+  });
+
+  $("#editSlider").validate({
+    onsubmit: true,
+    rules: {
+      "main_title": {
+        required: true,
+      },
+      "url": {
+        required: true,
+      }
+    },
+    messages: {
+      "main_title": {
+        required: "Trường này là bắt buộc",
+      },
+      "url": {
+        required: "Trường này là bắt buộc",
+      },
+    }
+  });
+
+
 });
