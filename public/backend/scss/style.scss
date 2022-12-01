@@ -1,0 +1,47 @@
+$primary-color:#34495e;
+$second-color: #2c3e50;
+$third-color:#2980b9;
+*{
+    font-family: 'Noto Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: $third-color;
+}
+
+.btn-1, .nav-item .active{
+    background-color: $primary-color !important;
+    color:white;
+}
+
+.btn-1:hover,  .nav-item .active:hover{
+    background-color: $second-color !important;
+    color:white;
+}
+
+.logo{
+    max-width: 40px;
+}
+
+#layer1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    img{
+        margin: 0 auto
+    }
+}
+
+.dataTables_filter, .dataTables_length{
+    margin-bottom: 30px;
+}
+
+.errors{
+    ul{
+        padding:0 ;
+        margin:0;
+        list-style-type: none;
+        li{}
+    }
+}
