@@ -116,20 +116,10 @@ class Forgot extends Controller
             'password' => [
                 'label' => 'Password',
                 'rules' => 'required|min_length[4]|max_length[50]|alpha_numeric',
-                'errors' => [
-                    'required' => 'password is required',
-                    'min_length' => 'min length is 5',
-                    'max_length' => 'max length is 50',
-                    'alpha_numeric' => 'add alpha and numeric',
-                ]
             ],
-            'confpwd' => [
-                'label' => 'Confirm Password',
+            'confpassword' => [
+                'label' => 'xác nhận mật khẩu',
                 'rules' => 'required|matches[password]',
-                'errors' => [
-                    'required' => 'Gõ lại mật khẩu',
-                    'matches' => 'Mật khẩu không khớp',
-                ],
             ]
         ];
 
@@ -147,17 +137,24 @@ class Forgot extends Controller
                         'token_date' => ''
                     ];
                     $userModel->updateUser($data, $id);
-                    echo view('auth/passwordchangesuccess');
+                    $session = session();
+                    $session->setFlashdata('msg', 'Dữ liệu cập nhật');
+                    echo view('auth/contents/passwordchangesuccess');
                 } else {
-                    echo '<h1>token sau hoặc link đã hết hạn</h1>';
+                    $session = session();
+                    $session->setFlashdata('msgErr', 'token sau hoặc link đã hết hạn');
                 }
             } else {
-                echo '<h1>link lỗi</h1>';
+                $session = session();
+                $session->setFlashdata('msgErr', 'link lỗi');
             }
         } else {
             $session = session();
-            $session->setFlashdata('msg', $this->validator->listErrors());
-            return redirect()->to('/auth/updatepassword');
+            $session->setFlashdata('msgErr', $this->validator->listErrors());
+            //redirect()->back();
+            $id = $this->request->getVar('id');
+            $token = $this->request->getVar('token');
+            return redirect()->to('/auth/redirect/'.$id.'/'.$token);
         }
     }
 } 

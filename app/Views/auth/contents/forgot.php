@@ -45,6 +45,35 @@
         ";
   };
 
+  if ($session->get('msgErr')) {
+    $err = trim(strip_tags($session->get('msgErr')));
+    $array = explode('.', $err);
+    if (count($array) > 1) {
+        foreach ($array as $val) {
+            if ($val != '') {
+                $val = str_replace(array("\r", "\n"), '', $val);
+                echo "
+                $.toast({
+                    heading: 'Lỗi',
+                    text: '$val',
+                    showHideTransition: 'slide',
+                    icon: 'error'
+                })
+                ";
+            }
+        }
+    } else {
+        echo "
+        $.toast({
+            heading: 'Lỗi',
+            text: '$err',
+            showHideTransition: 'slide',
+            icon: 'error'
+        })
+        ";
+    }
+}
+
   ?>
 </script>
 

@@ -1,0 +1,9 @@
+__ci_last_regenerate|i:1669855541;_ci_previous_url|s:34:"http://localhost/ci4cty/auth/login";msg|s:236:"<!-- DEBUG-VIEW START 1 SYSTEMPATH\Validation\Views\list.php -->
+	<div class="errors" role="alert">
+		<ul>
+					<li>Gõ lại mật khẩu</li>
+				</ul>
+	</div>
+
+<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Validation\Views\list.php -->
+";__ci_vars|a:1:{s:3:"msg";s:3:"old";}

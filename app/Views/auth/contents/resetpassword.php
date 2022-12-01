@@ -1,5 +1,5 @@
 <div class="bg-light d-flex justify-content-center align-items-center vh-100 ">
-  <form class="border p-4 rounded shadow-lg" id="resetForm" method="post" action="<?php echo base_url()?>/auth/resetpassword">
+  <form class="border p-4 rounded shadow-lg" id="resetForm" method="post" action="<?php echo base_url() ?>/auth/resetpassword">
     <h3><strong>Đổi mật khẩu</strong></h3>
     <?php if (session()->getFlashdata('msgErr')) : ?>
       <div class="alert alert-danger"><?= session()->getFlashdata('msgErr') ?></div>
@@ -21,7 +21,7 @@
 
     <div class="row p-0 mb-3">
       <div class="col-md-12 col-12">
-        <p class="d-inline"><a href="<?= base_url()?>/auth/login"> Đăng nhập</a></p>
+        <p class="d-inline"><a href="<?= base_url() ?>/auth/login"> Đăng nhập</a></p>
       </div>
     </div>
 
@@ -46,6 +46,15 @@
           required: true,
           minlength: 6
         },
+      },
+      messages: {
+        "password": {
+          required: "Trường mật khẩu không được bỏ trống",
+          minlength: "Trường mật khẩu cần ít nhất 6 ký tự"
+        },
+        "confpassword": {
+          equalTo: "Trường xác nhận mật khẩu phải khớp với mật khẩu"
+        }
       }
     });
   });
@@ -63,6 +72,33 @@
         ";
   };
 
+  if ($session->get('msgErr')) {
+    $err = trim(strip_tags($session->get('msgErr')));
+    $array = explode('.', $err);
+    if (count($array) > 1) {
+      foreach ($array as $val) {
+        if ($val != '') {
+          $val = str_replace(array("\r", "\n"), '', $val);
+          echo "
+                            $.toast({
+                                heading: 'Lỗi',
+                                text: '$val',
+                                showHideTransition: 'slide',
+                                icon: 'error'
+                            })
+                            ";
+        }
+      }
+    } else {
+      echo "
+                    $.toast({
+                        heading: 'Lỗi',
+                        text: '$err',
+                        showHideTransition: 'slide',
+                        icon: 'error'
+                    })
+                    ";
+    }
+  }
   ?>
 </script>
-

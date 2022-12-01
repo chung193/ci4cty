@@ -42,7 +42,7 @@ $routes->group('auth', ['filter' => 'noauth'], function ($routes) {
     $routes->get('forgot', 'auth\Forgot::index');
     $routes->post('sendresetlink', 'auth\Forgot::sendresetlink');
     $routes->get('redirect/(:num)/(:any)', 'auth\Forgot::loadresetpage/$1/$2'); // 1st param is id, 2nd is token
-    $routes->post('resetpassword', 'auth/Forgot::updatepassword');
+    $routes->post('resetpassword', 'auth\Forgot::updatepassword');
 });
 $routes->group('manage', ['filter' => 'role'], function ($routes) {
     

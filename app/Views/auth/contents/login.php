@@ -13,13 +13,13 @@
       <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
     </div>
     <div class="row p-0">
-      <div class="col-md-6 col-6">
+      <div class="col-md-12 col-12">
         <p><a href="<?= base_url()?>/auth/forgot">Quên mật khẩu?</a></p>
       </div>
-      <div class="form-check mb-3 col-md-6 col-6">
+      <!-- <div class="form-check mb-3 col-md-6 col-6">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Giữ tôi đăng nhập</label>
-      </div>
+      </div> -->
     </div>
 
 
@@ -44,6 +44,16 @@
           required: true,
           minlength: 6
         },
+      }, 
+      messages:{
+        "email":{
+          required: "Trường này là bắt buộc",
+          email: "Trường này phải là 1 email"
+        }, 
+        "password":{
+          required: "Trường mật khẩu không được để trống",
+          minlength: "Trường mật khẩu phải có ít nhất 6 ký tự",
+        }
       }
     });
   });
@@ -60,6 +70,35 @@
         })
         ";
   };
+
+  if ($session->get('msgErr')) {
+    $err = trim(strip_tags($session->get('msgErr')));
+    $array = explode('.', $err);
+    if (count($array) > 1) {
+        foreach ($array as $val) {
+            if ($val != '') {
+                $val = str_replace(array("\r", "\n"), '', $val);
+                echo "
+                $.toast({
+                    heading: 'Lỗi',
+                    text: '$val',
+                    showHideTransition: 'slide',
+                    icon: 'error'
+                })
+                ";
+            }
+        }
+    } else {
+        echo "
+        $.toast({
+            heading: 'Lỗi',
+            text: '$err',
+            showHideTransition: 'slide',
+            icon: 'error'
+        })
+        ";
+    }
+}
 
   ?>
 </script>

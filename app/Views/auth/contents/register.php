@@ -1,6 +1,5 @@
-
 <div class="bg-light d-flex justify-content-center align-items-center vh-100 ">
-  <form class="border p-4 rounded shadow-lg" id="regForm" method="post" action="<?php echo base_url()?>/auth/register/save">
+  <form class="border p-4 rounded shadow-lg" id="regForm" method="post" action="<?php echo base_url() ?>/auth/register/save">
     <h3><strong>Đăng ký</strong></h3>
     <?php if (session()->getFlashdata('msgErr')) : ?>
       <div class="alert alert-danger"><?= session()->getFlashdata('msgErr') ?></div>
@@ -27,7 +26,7 @@
 
     <div class="row p-0 mb-3">
       <div class="col-md-12 col-12">
-        <p class="d-inline">Đã có tài khoản?<a href="<?= base_url()?>/auth/login"> Đăng nhập</a></p>
+        <p class="d-inline">Đã có tài khoản?<a href="<?= base_url() ?>/auth/login"> Đăng nhập</a></p>
       </div>
     </div>
 
@@ -59,8 +58,66 @@
         "confpassword": {
           equalTo: "#password"
         }
+      },
+      messages: {
+        "nicename": {
+          required: "Trường tên không được để trống",
+        },
+        "email": {
+          required: "Trường email không được để trống",
+          email: "Trường này phải là 1 email"
+        },
+        "password": {
+          required: "Trường mật khẩu không được để trống",
+          minlength: "Trường mật khẩu có ít nhất 6 ký tự"
+        },
+        "confpassword": {
+          equalTo: "Trường xác nhận mật khẩu cần khớp với mật khẩu"
+        }
       }
     });
   });
 
+  <?php 
+  $session = session();
+  if ($session->get('msg')) {
+    echo "
+          $.toast({
+            heading: 'Thông tin',
+            text: '.$session->get('msg').',
+            showHideTransition: 'slide',
+            icon: 'info'
+        })
+        ";
+  };
+  
+  if ($session->get('msgErr')) {
+    $err = trim(strip_tags($session->get('msgErr')));
+    $array = explode('.', $err);
+    if (count($array) > 1) {
+      foreach ($array as $val) {
+        if ($val != '') {
+          $val = str_replace(array("\r", "\n"), '', $val);
+          echo "
+                            $.toast({
+                                heading: 'Lỗi',
+                                text: '$val',
+                                showHideTransition: 'slide',
+                                icon: 'error'
+                            })
+                            ";
+        }
+      }
+    } else {
+      echo "
+                    $.toast({
+                        heading: 'Lỗi',
+                        text: '$err',
+                        showHideTransition: 'slide',
+                        icon: 'error'
+                    })
+                    ";
+    }
+  }
+  ?>
 </script>

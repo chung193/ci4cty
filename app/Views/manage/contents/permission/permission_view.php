@@ -83,7 +83,7 @@ echo view('manage/components/breadcrumb', $data)
           </tr>
         <?php
           }
-        }
+        
 
         ?>
 

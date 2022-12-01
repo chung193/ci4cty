@@ -12,7 +12,7 @@ class Register extends Controller
         if(gettype($temp) != NULL){
             return redirect()->route('login');
         }else{
-            echo 'bla ble'; die();
+            die();
         }
     }
     public function index()
@@ -29,6 +29,7 @@ class Register extends Controller
     public function save()
     {
         helper(['form']);
+        $session = session();
         $rules = [
             'nicename'      => 'required|max_length[20]',
             'lastname'      => 'max_length[20]',
@@ -45,9 +46,6 @@ class Register extends Controller
             $model = new User_model();
             $data = [
                 'nicename'     => $this->request->getVar('nicename'),
-                'lastname'     => $this->request->getVar('lastname'),
-                'firstname'     => $this->request->getVar('firstname'),
-                'middlename'     => $this->request->getVar('middlename'),
                 'email'    => $this->request->getVar('email'),
                 'is_superadmin' => 0,
                 'role' => 'editor',
@@ -55,9 +53,11 @@ class Register extends Controller
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
             $model->save($data);
+            $session->setFlashdata('msg', 'Tài khoản đã được tạo');
             return redirect()->to('/auth/login');
         }else{
             $data['validation'] = $this->validator;
+            $session->setFlashdata('msgErr', $data['validation']);
             echo view('/auth/register', $data);
         }
          
