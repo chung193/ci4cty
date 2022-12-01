@@ -18,7 +18,12 @@ class Seo_model extends Model
             $query = $builder->get();
             return $query->getResultArray();
         } else {
-            return $this->getWhere(['content_id' => $id, 'content_type' => $type]);
+            $builder->select('seo.*');
+            $builder->where('id', $id);
+            $builder->where('content_type', $type);
+            $builder->orderBy('id', 'DESC');
+            $query = $builder->get();
+            return $query;
         }
     }
 

@@ -58,7 +58,7 @@ class Post extends BaseController
     public function save()
     {
         $rules = [
-            'title'      => ['label' => 'Tiêu đề','rules' =>'required|min_length[3]|max_length[600]'],
+            'title'      => ['label' => 'Tiêu đề','rules' =>'required|max_length[600]'],
             'parentid'   => ['label' => 'Danh mục','rules' =>'required|numeric'],
             'slug'       => ['label' => 'Slug ','rules' => 'max_length[255]|is_unique[post.slug]'],
             'content'       => ['label' => 'Nội dung','rules' =>'required'],
@@ -126,7 +126,8 @@ class Post extends BaseController
             );
             // print_r($seo);die();
             $this->setSeoContent($seo);
-
+            $session = session();
+            $session->setFlashdata('msg', 'Nội dung cập nhật');
             return redirect()->to('/manage/post');
         }else{
             $session = session();
@@ -226,7 +227,8 @@ class Post extends BaseController
             );
             // print_r($seo);die();
             $this->updateSeoContent($seo, $seo_item->id);
-
+            $session = session();
+            $session->setFlashdata('msg', 'Nội dung cập nhật');
             return redirect()->to('/manage/post');
         }else{
             $session = session();
@@ -239,6 +241,8 @@ class Post extends BaseController
     {
         $model = new Post_model();
         $model->moveTrash($id);
+        $session = session();
+        $session->setFlashdata('msg', 'Nội dung cập nhật');
         return redirect()->to('/manage/post');
     }
 
@@ -246,6 +250,8 @@ class Post extends BaseController
     {
         $model = new Post_model();
         $model->Restore($id);
+        $session = session();
+        $session->setFlashdata('msg', 'Nội dung cập nhật');
         return redirect()->to('/manage/post');
     }
 
@@ -253,6 +259,8 @@ class Post extends BaseController
     {
         $model = new Post_model();
         $model->deletePost($id);
+        $session = session();
+        $session->setFlashdata('msg', 'Nội dung cập nhật');
         return redirect()->to('/manage/post');
     }
 

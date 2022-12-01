@@ -52,6 +52,8 @@ class Options extends BaseController
         // print_r($data['data']);
         // die();
         $model->updateOption($data);
+        $session = session();
+        $session->setFlashdata('msg', "Lưu thay đổi");
         return redirect()->to('/manage/options');
     }
 }

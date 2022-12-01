@@ -203,7 +203,8 @@ class Page extends BaseController
              );
              // print_r($seo);die();
              $this->updateSeoContent($seo, $seo_item->id);
-             
+            $session = session();
+            $session->setFlashdata('msg', "Những thay đổi của bạn đã được lưu lại");
             return redirect()->to('/manage/page');
         }else{
             $session = session();
@@ -216,6 +217,8 @@ class Page extends BaseController
     {
         $model = new Page_model();
         $model->deletePage($id);
+        $session = session();
+        $session->setFlashdata('msg', "Những thay đổi của bạn đã được lưu lại");
         return redirect()->to('/manage/page');
     }
 

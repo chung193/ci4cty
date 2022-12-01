@@ -1,0 +1,9 @@
+__ci_last_regenerate|i:1669865013;_ci_previous_url|s:43:"http://localhost/ci4cty/manage/category/add";user_id|s:1:"1";user_name|s:8:"chung193";user_email|s:23:"chunghello193@gmail.com";user_img|s:17:"tagfo5xi2g971.jpg";group_id|s:1:"1";user_is_superadmin|s:1:"1";logged_in|b:1;msgErr|s:249:"<!-- DEBUG-VIEW START 1 SYSTEMPATH\Validation\Views\list.php -->
+	<div class="errors" role="alert">
+		<ul>
+					<li>Trường tiêu đề bắt buộc.</li>
+				</ul>
+	</div>
+
+<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Validation\Views\list.php -->
+";__ci_vars|a:1:{s:6:"msgErr";s:3:"old";}

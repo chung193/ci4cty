@@ -58,6 +58,7 @@ echo view('manage/components/breadcrumb', $data)
     <div class="col-12 col-md-4">
         <?php echo view('manage/contents/SEO/seo', $data)
         ?>
+        <hr>
         <div class="form-check form-switch">
             <input class="form-check-input" name="published" type="checkbox" id="flexSwitchCheckChecked" value="1" checked>
             <label class="form-check-label" for="flexSwitchCheckChecked">Xuất bản</label>

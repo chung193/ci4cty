@@ -78,7 +78,7 @@ class Profile extends BaseController
                     }
                     $model->updateUser($data, $id);
                     $session = session();
-                    $session->setFlashdata('msg', 'update success');
+                    $session->setFlashdata('msg', 'Lưu thay đổi');
                     return redirect()->to('/manage/profile');
                 }
         }else{

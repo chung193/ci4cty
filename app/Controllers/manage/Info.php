@@ -87,6 +87,8 @@ class Info extends BaseController
             );
 
             $model->updateInfo($data, $id);
+            $session = session();
+            $session->setFlashdata('msg', "Lưu thay đổi");
             return redirect()->to('/manage/info');
         }else{
             $session = session();

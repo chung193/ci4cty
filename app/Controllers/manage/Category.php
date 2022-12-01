@@ -162,6 +162,8 @@ class Category extends BaseController
     {
         $model = new Category_model();
         $model->deleteCategory($id);
+        $session = session();
+        $session->setFlashdata('msg', "Lưu thay đổi");
         return redirect()->to('/manage/category');
     }
 

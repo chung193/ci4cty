@@ -143,6 +143,8 @@ class User_group extends BaseController
     {
         $model = new User_group_model();
         $model->deleteUserGroup($id);
+        $session = session();
+        $session->setFlashdata('msg', "Lưu thay đổi");
         return redirect()->to('/manage/user-group');
     }
 }

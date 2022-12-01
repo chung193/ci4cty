@@ -92,6 +92,8 @@ class User extends BaseController
                     'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
                 );
                 $model->saveUser($data);
+                $session = session();
+                $session->setFlashdata('msg', "Lưu thay đổi");
                 return redirect()->to('/manage/user');
             } else {
                 $data = ['errors' => 'The file has already been moved.'];
@@ -107,6 +109,8 @@ class User extends BaseController
                     'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
                 );
                 $model->saveUser($data);
+                $session = session();
+                $session->setFlashdata('msg', "Lưu thay đổi");
                 return redirect()->to('/manage/user');
         }
     }
@@ -178,6 +182,8 @@ class User extends BaseController
                         $data['password'] = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
                     }
                     $model->updateUser($data, $id);
+                    $session = session();
+                    $session->setFlashdata('msg', "Lưu thay đổi");
                     return redirect()->to('/manage/user');
             }else{
                     $model = new User_model();                    
@@ -193,6 +199,8 @@ class User extends BaseController
                         $data['password'] = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
                     }
                     $model->updateUser($data, $id);
+                    $session = session();
+                    $session->setFlashdata('msg', "Lưu thay đổi");
                     return redirect()->to('/manage/user');
             }
         }
@@ -202,6 +210,8 @@ class User extends BaseController
     {
         $model = new User_model();
         $model->deleteUser($id);
+        $session = session();
+        $session->setFlashdata('msg', "Lưu thay đổi");
         return redirect()->to('/manage/user');
     }
 

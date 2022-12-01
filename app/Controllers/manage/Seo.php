@@ -51,7 +51,7 @@ class Seo extends BaseController
 
         if ($seo->content_type == 'post') {
             $post_md = new Post_model();
-            $tem = $cat_md->getPost($seo->content_id);
+            $tem = $post_md->getPost($seo->content_id);
         }
 
         if ($seo->content_type == 'page') {

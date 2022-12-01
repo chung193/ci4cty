@@ -76,6 +76,7 @@ echo view('manage/components/breadcrumb', $data)
     <div class="col-12 col-md-4">
         <?php echo view('manage/contents/SEO/seo', $data);
         ?>
+        <hr>
         <div class="form-check form-switch">
             <input class="form-check-input" name="published" value="1" type="checkbox" id="flexSwitchCheckChecked" <?php
                                                                                                                     if ($post->published) {

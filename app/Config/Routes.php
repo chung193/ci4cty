@@ -44,9 +44,6 @@ $routes->group('auth', ['filter' => 'noauth'], function ($routes) {
     $routes->get('redirect/(:num)/(:any)', 'auth\Forgot::loadresetpage/$1/$2'); // 1st param is id, 2nd is token
     $routes->post('resetpassword', 'auth\Forgot::updatepassword');
 });
-$routes->group('manage', ['filter' => 'role'], function ($routes) {
-    
-});
 
 $routes->group('manage', ['filter' => 'auth'], function ($routes) {
 
@@ -125,7 +122,7 @@ $routes->group('manage', ['filter' => 'auth'], function ($routes) {
 
     // option
     $routes->get('options', 'manage\Options::index');
-    $routes->post('options/save', 'manage/Options::save');
+    $routes->post('options/save', 'manage\Options::save');
 
     // shop_info
     $routes->add('info/edit/(:num)', 'manage\Info::edit/$1');

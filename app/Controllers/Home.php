@@ -24,7 +24,6 @@ class Home extends BaseController
     }
     public function index()
     {
-        echo 'index';
        echo view('frontend/layout');
     }
 }
